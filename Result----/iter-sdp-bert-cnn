@@ -1,0 +1,17 @@
+Iter:      0,  Train Loss:  0.66,  Train Acc: 67.19%,  Val Loss:  0.66,  Val Acc: 73.44%,  Time: 0:01:29 *
+
+Test Loss:  0.66,  Test Acc: 75.52%
+Precision, Recall and F1-Score...
+              precision    recall  f1-score   support
+
+       clean     0.7877    0.9400    0.8571       150
+       buggy     0.3077    0.0952    0.1455        42
+
+    accuracy                         0.7552       192
+   macro avg     0.5477    0.5176    0.5013       192
+weighted avg     0.6827    0.7552    0.7015       192
+
+Confusion Matrix...
+[[141   9]
+ [ 38   4]]
+Time usage: 0:01:28

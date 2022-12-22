@@ -1,0 +1,21 @@
+Iter:      0,  Train Loss:   1.2,  Train Acc:  9.38%,  Val Loss:   1.1,  Val Acc: 22.40%,  Time: 0:03:55 *
+
+
+  _warn_prf(average, modifier, msg_start, len(result))
+/Users/test/Downloads/Keio-Takada-Lab-Zemi/SDP/GH-LSTMs/venv/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1334: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+Test Loss:   1.0,  Test Acc: 26.36%
+Precision, Recall and F1-Score...
+              precision    recall  f1-score   support
+
+       buggy     0.0000    0.0000    0.0000       257
+       clean     0.2636    1.0000    0.4172        92
+
+    accuracy                         0.2636       349
+   macro avg     0.1318    0.5000    0.2086       349
+weighted avg     0.0695    0.2636    0.1100       349
+
+Confusion Matrix...
+[[  0 257]
+ [  0  92]]
+Time usage: 0:01:08
