@@ -37,8 +37,8 @@ class Model(nn.Module):
     def __init__(self, config):
         super(Model, self).__init__()
         self.bert = BertModel.from_pretrained(config.bert_path)
-        # for param in self.bert.parameters():
-        #     param.requires_grad = True
+        for param in self.bert.parameters():
+            param.requires_grad = False
         self.convs = nn.ModuleList(
             [nn.Conv2d(1, config.num_filters, (k, config.hidden_size)) for k in config.filter_sizes])
         self.dropout = nn.Dropout(config.dropout)

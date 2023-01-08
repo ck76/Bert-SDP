@@ -51,8 +51,8 @@ class Model(nn.Module):
         super(Model, self).__init__()
         # self.bert = AutoModelForMaskedLM.from_pretrained("CAUKiel/JavaBERT")
         self.bert = BertModel.from_pretrained("bert-base-uncased")
-        # for param in self.bert.parameters():
-        #     param.requires_grad = False
+        for param in self.bert.parameters():
+            param.requires_grad = False
         self.convs = nn.ModuleList(
             [nn.Conv2d(1, config.num_filters, (k, config.hidden_size)) for k in config.filter_sizes])
         self.dropout = nn.Dropout(config.dropout)
