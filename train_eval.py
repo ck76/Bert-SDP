@@ -29,8 +29,11 @@ from pytorch_pretrained.optimization import BertAdam
 
 
 def train(config, model, train_iter, dev_iter, test_iter):
+    # 开始时间
     start_time = time.time()
+    # 开始训练
     model.train()
+    # 参数优化？
     param_optimizer = list(model.named_parameters())
     no_decay = ['bias', 'LayerNorm.bias', 'LayerNorm.weight']
     optimizer_grouped_parameters = [
@@ -41,27 +44,41 @@ def train(config, model, train_iter, dev_iter, test_iter):
                          lr=config.learning_rate,
                          warmup=0.05,
                          t_total=len(train_iter) * config.num_epochs)
-    total_batch = 0  # 记录进行到多少batch
+    # 记录进行到多少batch
+    total_batch = 0
     dev_best_loss = float('inf')
-    last_improve = 0  # 记录上次验证集loss下降的batch数
-    flag = False  # 记录是否很久没有效果提升
+    # 记录上次验证集loss下降的batch数
+    last_improve = 0
+    # 记录是否很久没有效果提升
+    flag = False
+    # 开始训练
     model.train()
-    for epoch in range(config.num_epochs): #3 rounds
+    # 3 rounds
+    for epoch in range(config.num_epochs):
         print('Epoch [{}/{}]'.format(epoch + 1, config.num_epochs))
         for i, (trains, labels) in enumerate(train_iter):
-            # print(str(i)+"-------"+str(len(train_iter))+"------" +str(trains)+"!"+str(labels))
-            # print(str(i) + "-------" + str(len(train_iter)) )
+            print(str(i)+"-------"+str(len(train_iter))+"------" +str(trains)+"!"+str(labels))
+            print(str(i) + "-------" + str(len(train_iter)) )
+            # 训练并且得到训练输出
             outputs = model(trains)
+            #
             model.zero_grad()
+            # 计算loss
             loss = F.cross_entropy(outputs, labels)
+            # 反向传播
             loss.backward()
+            # 优化器
             optimizer.step()
             # todo 100轮才打印一回，怪不得看不到
             if total_batch % 1 == 0:
                 # 每多少轮输出在训练集和验证集上的效果
+                # 真实标签结果
                 true = labels.data.cpu()
+                # 模型预测输出标签
                 predic = torch.max(outputs.data, 1)[1].cpu()
+                # 训练准确率
                 train_acc = metrics.accuracy_score(true, predic)
+                # 验证集 evaluate
                 dev_acc, dev_loss = evaluate(config, model, dev_iter)
                 if dev_loss < dev_best_loss:
                     dev_best_loss = dev_loss
@@ -75,6 +92,7 @@ def train(config, model, train_iter, dev_iter, test_iter):
                 print(msg.format(total_batch, loss.item(), train_acc, dev_loss, dev_acc, time_dif, improve))
                 model.train()
             total_batch += 1
+            # # 若超过1000batch效果还没提升，则提前结束训练
             if total_batch - last_improve > config.require_improvement:
                 # 验证集loss超过1000batch没下降，结束训练
                 print("No optimization for a long time, auto-stopping...")
@@ -83,6 +101,7 @@ def train(config, model, train_iter, dev_iter, test_iter):
         if flag:
             break
 
+    # 完成训练之后进行测试
     test(config, model, test_iter)
 
 
@@ -91,6 +110,7 @@ def test(config, model, test_iter):
     model.load_state_dict(torch.load(config.save_path))
     model.eval()
     start_time = time.time()
+    # evaluate
     test_acc, test_loss, test_report, test_confusion = evaluate(config, model, test_iter, test=True)
     msg = 'Test Loss: {0:>5.2},  Test Acc: {1:>6.2%}'
     print(msg.format(test_loss, test_acc))
@@ -109,9 +129,11 @@ def evaluate(config, model, data_iter, test=False):
     labels_all = np.array([], dtype=int)
     with torch.no_grad():
         for texts, labels in data_iter:
+            # 模型输出
             outputs = model(texts)
             loss = F.cross_entropy(outputs, labels)
             loss_total += loss
+            # 标签
             labels = labels.data.cpu().numpy()
             predic = torch.max(outputs.data, 1)[1].cpu().numpy()
             labels_all = np.append(labels_all, labels)

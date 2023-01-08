@@ -3,6 +3,11 @@ import torch
 import torch.nn as nn
 # https://github.com/graykode/nlp-tutorial/blob/master/3-3.Bi-LSTM/Bi-LSTM.py#L52:5
 from torch.autograd import Variable
+from transformers import AutoTokenizer, AutoModelForMaskedLM
+
+tokenizer = AutoTokenizer.from_pretrained("CAUKiel/JavaBERT")
+
+model = AutoModelForMaskedLM.from_pretrained("CAUKiel/JavaBERT")
 
 
 class BiLSTM(nn.Module):

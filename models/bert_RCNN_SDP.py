@@ -9,7 +9,7 @@ class Config(object):
 
     """配置参数"""
     def __init__(self, dataset):
-        self.model_name = 'bert'
+        self.model_name = 'bert_rcnn_sdp'
         self.train_path = dataset + '/data/ant/train.txt'                                # 训练集
         self.dev_path = dataset + '/data/ant/dev.txt'                                    # 验证集
         self.test_path = dataset + '/data/ant/test.txt'                                  # 测试集
@@ -40,8 +40,8 @@ class Model(nn.Module):
         super(Model, self).__init__()
         self.bert =  BertModel.from_pretrained("bert-base-uncased")
         # TODO 应该是在这更新了bert
-        for param in self.bert.parameters():
-            param.requires_grad = True
+        # for param in self.bert.parameters():
+        #     param.requires_grad = True
         self.lstm = nn.LSTM(config.hidden_size, config.rnn_hidden, config.num_layers,
                             bidirectional=True, batch_first=True, dropout=config.dropout)
         self.maxpool = nn.MaxPool1d(config.pad_size)

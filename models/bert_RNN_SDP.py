@@ -39,8 +39,8 @@ class Model(nn.Module):
     def __init__(self, config):
         super(Model, self).__init__()
         self.bert = BertModel.from_pretrained("bert-base-uncased")
-        for param in self.bert.parameters():
-            param.requires_grad = True
+        # for param in self.bert.parameters():
+        #     param.requires_grad = True
         self.lstm = nn.LSTM(config.hidden_size, config.rnn_hidden, config.num_layers,
                             bidirectional=True, batch_first=True, dropout=config.dropout)
         self.dropout = nn.Dropout(config.dropout)

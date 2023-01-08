@@ -16,8 +16,9 @@ def build_dataset(config):
                 lin = line.strip()
                 if not lin:
                     continue
-                # 内容和标签，序列长度，mask，再加一个文件名字得了，到时候根据这个获取metrics数据
+                # todo 内容和标签，序列长度，mask，再加一个文件名字得了，到时候根据这个获取metrics数据
                 content, label = lin.split('\t')
+                # todo 使用分词器
                 token = config.tokenizer.tokenize(content)
                 token = [CLS] + token
                 seq_len = len(token)

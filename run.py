@@ -14,7 +14,7 @@ args = parser.parse_args()
 
 if __name__ == '__main__':
     dataset = 'PROMISE'  # 数据集
-
+    # todo 从这里控制模型的选择
     model_name = args.model  # bert
     x = import_module('models.' + model_name)
     config = x.Config(dataset)
