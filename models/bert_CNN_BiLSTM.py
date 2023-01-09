@@ -21,11 +21,11 @@ def pre_process_data(path):
 class Config(object):
 
     """配置参数"""
-    def __init__(self, dataset):
+    def __init__(self, dataset, project_name="ant"):
         self.model_name = 'bert_cnn_bilstm_sdp'
-        self.train_path = dataset + '/data/ant/train.txt'  # 训练集
-        self.dev_path = dataset + '/data/ant/dev.txt'  # 验证集
-        self.test_path = dataset + '/data/ant/test.txt'  # 测试集
+        self.train_path = dataset + '/data/'+project_name+'/train.txt'  # 训练集
+        self.dev_path = dataset + '/data/'+project_name+'/dev.txt'  # 验证集
+        self.test_path = dataset + '/data/'+project_name+'/test.txt'  # 测试集
         self.class_list = [x.strip() for x in open(
             dataset + '/data/ant/class.txt').readlines()]                                # 类别名单
         self.save_path = dataset + '/saved_dict/' + self.model_name + '.ckpt'        # 模型训练结果
@@ -43,6 +43,8 @@ class Config(object):
         self.filter_sizes = (2, 3, 4)                                   # 卷积核尺寸
         self.num_filters = 256                                          # 卷积核数量(channels数)
         self.dropout = 0.1
+        self.rnn_hidden = 768
+        self.num_layers = 2
 
 
 class Model(nn.Module):
@@ -74,3 +76,13 @@ class Model(nn.Module):
         out = self.fc_cnn(out)
         return out
 
+
+net = Model(Config("PROMISE"))
+print(net)
+
+params = list(net.parameters())
+print(len(params))
+
+input = torch.randn(1, 1, 32, 32)
+out = net(input)
+print(out)
