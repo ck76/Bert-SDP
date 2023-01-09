@@ -24,7 +24,7 @@ class Config(object):
         self.batch_size = 128                                           # mini-batch大小
         self.pad_size = 256                                              # 每句话处理成的长度(短填长切)
         self.learning_rate = 5e-5                                       # 学习率
-        self.bert_path = './bert_pretrain'
+        self.bert_path = './JavaBERT'
         self.tokenizer = BertTokenizer.from_pretrained(self.bert_path)
         self.hidden_size = 768
         self.filter_sizes = (2, 3, 4)                                   # 卷积核尺寸
@@ -38,7 +38,8 @@ class Model(nn.Module):
 
     def __init__(self, config):
         super(Model, self).__init__()
-        self.bert = BertModel.from_pretrained("bert-base-uncased")
+        self.bert = BertModel.from_pretrained(config.bert_path)
+        # self.bert = BertModel.from_pretrained("bert-base-uncased")
         for param in self.bert.parameters():
             param.requires_grad = False
         self.lstm = nn.LSTM(config.hidden_size, config.rnn_hidden, config.num_layers,

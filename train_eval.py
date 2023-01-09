@@ -57,7 +57,7 @@ def train(config, model, train_iter, dev_iter, test_iter):
     for epoch in range(config.num_epochs):
         print('Epoch [{}/{}]'.format(epoch + 1, config.num_epochs))
         for i, (trains, labels) in enumerate(train_iter):
-            print(str(i)+"-------"+str(len(train_iter))+"------" +str(trains)+"!"+str(labels))
+            # print(str(i)+"-------"+str(len(train_iter))+"------" +str(trains)+"!"+str(labels))
             print(str(i) + "-------" + str(len(train_iter)) )
             # 训练并且得到训练输出
             outputs = model(trains)
@@ -104,13 +104,24 @@ def train(config, model, train_iter, dev_iter, test_iter):
     # 完成训练之后进行测试
     test(config, model, test_iter)
 
-
+# 精度(precision) = 正确预测的个数(TP)/被预测正确的个数(TP+FP)
+# 召回率(recall)=正确预测的个数(TP)/预测个数(TP+FN)
+# F1 = 2*精度*召回率/(精度+召回率)
+# support: 当前行的类别在测试数据中的样本总量
+# 同时还会给出总体的微平均值，宏平均值和加权平均值。
+# accuracy：计算正确率 (TP+TN) / (TP＋FP＋FN＋TN)
+# macro avg：各类的precision，recall，f1加和求平均
+# weighted avg :对每一类别的f1_score进行加权平均，权重为各类别数在y_true中所占比例
+# 链接：https://www.jianshu.com/p/4b4530f7ea3f
+# http://www.manongjc.com/detail/31-vnhrdhlxiqovkcj.html
+#https://blog.csdn.net/kancy110/article/details/74937469
+#
 def test(config, model, test_iter):
     # test
     model.load_state_dict(torch.load(config.save_path))
     model.eval()
     start_time = time.time()
-    # evaluate
+    # evaluate  return acc, loss_total / len(data_iter), report, confusion
     test_acc, test_loss, test_report, test_confusion = evaluate(config, model, test_iter, test=True)
     msg = 'Test Loss: {0:>5.2},  Test Acc: {1:>6.2%}'
     print(msg.format(test_loss, test_acc))
@@ -138,7 +149,8 @@ def evaluate(config, model, data_iter, test=False):
             predic = torch.max(outputs.data, 1)[1].cpu().numpy()
             labels_all = np.append(labels_all, labels)
             predict_all = np.append(predict_all, predic)
-
+    print(labels_all)
+    print(predict_all)
     acc = metrics.accuracy_score(labels_all, predict_all)
     if test:
         report = metrics.classification_report(labels_all, predict_all, target_names=config.class_list, digits=4)

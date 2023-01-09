@@ -36,8 +36,7 @@ class Config(object):
         self.batch_size = 64                                           # mini-batch大小 todo 太大的话可能会导致我的电脑内存泄漏
         self.pad_size = 256                                              # 每句话处理成的长度(短填长切)
         self.learning_rate = 5e-5                                       # 学习率
-        self.bert_path = './bert_pretrain'
-        # self.tokenizer =  AutoTokenizer.from_pretrained("CAUKiel/JavaBERT")
+        self.bert_path = './JavaBERT'
         self.tokenizer = BertTokenizer.from_pretrained(self.bert_path)
         self.hidden_size = 768
         self.filter_sizes = (2, 3, 4)                                   # 卷积核尺寸
@@ -49,8 +48,8 @@ class Model(nn.Module):
 
     def __init__(self, config):
         super(Model, self).__init__()
-        # self.bert = AutoModelForMaskedLM.from_pretrained("CAUKiel/JavaBERT")
-        self.bert = BertModel.from_pretrained("bert-base-uncased")
+        # self.bert = BertModel.from_pretrained("bert-base-uncased")
+        self.bert = BertModel.from_pretrained(config.bert_path)
         for param in self.bert.parameters():
             param.requires_grad = False
         self.convs = nn.ModuleList(
