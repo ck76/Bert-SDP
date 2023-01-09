@@ -73,3 +73,4 @@ class Model(nn.Module):
         out = self.dropout(out)
         out = self.fc_cnn(out)
         return out
+

@@ -40,6 +40,15 @@ class Model(nn.Module):
         self.bert = BertModel.from_pretrained(config.bert_path)
         for param in self.bert.parameters():
             param.requires_grad = False
+        #     Examples:
+        #         >>> # With square kernels and equal stride
+        #         >>> m = nn.Conv2d(16, 33, 3, stride=2)
+        #         >>> # non-square kernels and unequal stride and with padding
+        #         >>> m = nn.Conv2d(16, 33, (3, 5), stride=(2, 1), padding=(4, 2))
+        #         >>> # non-square kernels and unequal stride and with padding and dilation
+        #         >>> m = nn.Conv2d(16, 33, (3, 5), stride=(2, 1), padding=(4, 2), dilation=(3, 1))
+        #         >>> input = torch.randn(20, 16, 50, 100)
+        #         >>> output = m(input)
         self.convs = nn.ModuleList(
             [nn.Conv2d(1, config.num_filters, (k, config.hidden_size)) for k in config.filter_sizes])
         self.dropout = nn.Dropout(config.dropout)
@@ -48,7 +57,14 @@ class Model(nn.Module):
 
     def conv_and_pool(self, x, conv):
         x = F.relu(conv(x)).squeeze(3)
+        # number=X.size  # 计算 X 中所有元素的个数
+        # X_row=np.size(X,0)  #计算 X 的行数
+        # X_col=np.size(X,1)  #计算 X 的列数
         x = F.max_pool1d(x, x.size(2)).squeeze(2)
+        # # Max pooling over a (2, 2) window
+        #         x = F.max_pool2d(F.relu(self.conv1(x)), (2, 2))
+        #         # If the size is a square you can only specify a single number
+        #         x = F.max_pool2d(F.relu(self.conv2(x)), 2)
         return x
 
     def forward(self, x):

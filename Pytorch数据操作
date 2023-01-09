@@ -1,0 +1,12 @@
+
+torch.cat
+
+torch.transpose
+
+
+.squeeze(2)
+.unsqueeze(0)
+
+squeeze就是压缩（维度减少，降维）
+
+unsqueeze就是扩充（维度增加，升维）插入一个尺度为1的维度，其中axis表示新插入的维度在新shape 的第几个位置。
