@@ -15,7 +15,9 @@ def build_dataset(config):
         with open(path, 'r', encoding='UTF-8') as f:
             for line in tqdm(f):
                 lin = line.strip()
-                # print("load_dataset:"+lin)
+                # if flag_print_line:
+                #     flag_print_line=False
+                #     print("load_dataset:"+lin)
                 if not lin:
                     continue
                 # todo 内容和标签，序列长度，mask，再加一个文件名字得了，到时候根据这个获取metrics数据

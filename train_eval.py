@@ -53,12 +53,29 @@ def train(config, model, train_iter, dev_iter, test_iter):
     flag = False
     # 开始训练
     model.train()
+    flag_print_trains_shape=True
     # 3 rounds
     for epoch in range(config.num_epochs):
         print('Epoch [{}/{}]'.format(epoch + 1, config.num_epochs))
         for i, (trains, labels) in enumerate(train_iter):
             # print(str(i)+"-------"+str(len(train_iter))+"------" +str(trains)+"!"+str(labels))
             print(str(i) + "-------" + str(len(train_iter)) )
+            if flag_print_trains_shape:
+                print("hhhhh")
+                print(trains)
+                # hhhhh-0torch.Size([64, 256])
+                print("hhhhh-0"+str(trains[0].shape))
+                print(trains[0])
+                # hhhhh-1torch.Size([64])
+                print("hhhhh-1"+str(trains[1].shape))
+                print(trains[1])
+                # hhhhh-2torch.Size([64, 256])
+                print("hhhhh-2"+str(trains[2].shape))
+                print(trains[2])
+                # labelstorch.Size([64])
+                print("hhhhh-labels"+str(labels.shape))
+                print(labels)
+                flag_print_trains_shape=False
             # 训练并且得到训练输出
             outputs = model(trains)
             #
