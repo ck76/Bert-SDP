@@ -8,5 +8,9 @@ torch.transpose
 .unsqueeze(0)
 
 squeeze就是压缩（维度减少，降维）
-
 unsqueeze就是扩充（维度增加，升维）插入一个尺度为1的维度，其中axis表示新插入的维度在新shape 的第几个位置。
+
+C = torch.cat( (A,B),0 )  #按维数0拼接（竖着拼）
+C = torch.cat( (A,B),1 )  #按维数1拼接（横着拼）
+
+view  自动reshape
