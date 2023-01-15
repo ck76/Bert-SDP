@@ -60,3 +60,8 @@ class BiLSTM_Attention(nn.Module):
         output = output.permute(1, 0, 2) # output : [batch_size, len_seq, n_hidden]
         attn_output, attention = self.attention_net(output, final_hidden_state)
         return self.out(attn_output), attention # model : [batch_size, num_classes], attention : [batch_size, n_step]
+
+
+dataset = '/Users/test/Documents/GitHub/Bert-SDP/PROMISE'  # 数据集
+net = Model(Config(dataset))
+print(net)

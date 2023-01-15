@@ -25,7 +25,7 @@ class Config(object):
         # todo pad_size
         self.pad_size = 256                                              # 每句话处理成的长度(短填长切)
         self.learning_rate = 5e-5                                       # 学习率
-        self.bert_path = './JavaBERT'
+        self.bert_path = '/Users/test/Documents/GitHub/Bert-SDP/JavaBERT'
         self.tokenizer = BertTokenizer.from_pretrained(self.bert_path)
         self.hidden_size = 768
         self.filter_sizes = (2, 3, 4)                                   # 卷积核尺寸

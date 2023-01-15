@@ -32,7 +32,7 @@ class Config(object):
         self.batch_size = 128                                           # mini-batch大小
         self.pad_size = 32                                              # 每句话处理成的长度(短填长切)
         self.learning_rate = 5e-5                                       # 学习率
-        self.bert_path = './JavaBERT'
+        self.bert_path = '/Users/test/Documents/GitHub/Bert-SDP/JavaBERT'
         self.tokenizer = BertTokenizer.from_pretrained(self.bert_path)
         self.hidden_size = 768
         self.filter_sizes = (2, 3, 4)                                   # 卷积核尺寸
@@ -81,3 +81,8 @@ class Model(nn.Module):
         out = self.dropout(out)
         out = self.fc_rnn(out[:, -1, :])  # 句子最后时刻的 hidden state
         return out
+
+
+dataset = '/Users/test/Documents/GitHub/Bert-SDP/PROMISE'  # 数据集
+net = Model(Config(dataset))
+print(net)
