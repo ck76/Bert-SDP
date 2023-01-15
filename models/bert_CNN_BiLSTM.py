@@ -48,7 +48,7 @@ class Config(object):
         self.filter_sizes = (2, 3, 4)  # 卷积核尺寸
         self.num_filters = 256  # 卷积核数量(channels数)
         self.dropout = 0.1
-        self.rnn_hidden = 768
+        self.rnn_hidden = 20
         self.num_layers = 2
 
 
@@ -74,7 +74,7 @@ class Model(nn.Module):
         #             computing the final results. Default: 1
         self.lstm = nn.LSTM(config.hidden_size, config.rnn_hidden, config.num_layers,
                             bidirectional=True, batch_first=True, dropout=config.dropout)
-        self.conv1 = nn.Conv2d(1, config.num_filters, (5, config.hidden_size))
+        self.conv1 = nn.Conv2d(1, config.num_filters, (10, config.hidden_size))
         self.conv2 = nn.Conv2d(1, config.num_filters, (4, config.hidden_size))
         self.conv3 = nn.Conv2d(1, config.num_filters, (3, config.hidden_size))
         # self.conv2 = nn.Conv2d(1, config.num_filters, (5, config.hidden_size))
@@ -90,9 +90,22 @@ class Model(nn.Module):
 
         self.fc_cnn = nn.Linear(config.rnn_hidden * config.num_layers, config.num_classes)
 
+    # torch.Size([1, 1, 256, 768])
     def conv_and_pool(self, x, conv):
-        x = F.relu(conv(x)).squeeze(3)
+        print(" conv_and_pool -1")
+        print(x.shape)
+        x = conv(x)
+        print(" conv_and_pool -2")
+        print(x.shape)
+        x = F.relu(x)  # 就是压缩（维度减少，降维）
+        print(" conv_and_pool -3")
+        print(x.shape)
+        x = x.squeeze(3)
+        print(" conv_and_pool -4")
+        print(x.shape)
         x = F.max_pool1d(x, x.size(2)).squeeze(2)
+        print(" conv_and_pool -5")
+        print(x.shape)
         return x
 
     def forward(self, x):
