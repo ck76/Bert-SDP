@@ -74,6 +74,10 @@ class Model(nn.Module):
         #             computing the final results. Default: 1
         self.lstm = nn.LSTM(config.hidden_size, config.rnn_hidden, config.num_layers,
                             bidirectional=True, batch_first=True, dropout=config.dropout)
+        self.conv1 = nn.Conv2d(1, config.num_filters, (5, config.hidden_size))
+        self.conv2 = nn.Conv2d(1, config.num_filters, (4, config.hidden_size))
+        self.conv3 = nn.Conv2d(1, config.num_filters, (3, config.hidden_size))
+        # self.conv2 = nn.Conv2d(1, config.num_filters, (5, config.hidden_size))
         for param in self.bert.parameters():
             param.requires_grad = False
         #     in_channels: int,
@@ -111,7 +115,11 @@ class Model(nn.Module):
           卷积核在图像窗口上每次平移的间隔，即所谓的步长。这个概念和Tensorflow等其他框架没什么区别，不再多言。
         原文链接：https://blog.csdn.net/qq_42079689/article/details/102642610
         """
-        out = torch.cat([self.conv_and_pool(out, conv) for conv in self.convs], 1)
+        # out = torch.cat([self.conv_and_pool(out, conv) for conv in self.convs], 1)
+        out1 = self.conv_and_pool(out, self.conv1)
+        out2 = self.conv_and_pool(out, self.conv1)
+        out3 = self.conv_and_pool(out, self.conv1)
+        out = torch.cat((out1, out2, out3), 1)
         print("3")  # torch.Size([1, 768])
         print(out.shape)
         # # 序列长度seq_len=5, batch_size=3, 数据向量维数=10
