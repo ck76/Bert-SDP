@@ -47,8 +47,8 @@ def build_dataset(config):
 
 class DatasetIterater(object):
     def __init__(self, batches, batch_size, device):
-        self.batch_size = batch_size
-        self.batches = batches
+        self.batch_size = batch_size #64
+        self.batches = batches #
         self.n_batches = len(batches) // batch_size
         self.residue = False  # 记录batch数量是否为整数
         if len(batches) % self.n_batches != 0:
