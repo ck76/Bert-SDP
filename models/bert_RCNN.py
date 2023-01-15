@@ -63,3 +63,10 @@ class Model(nn.Module):
 dataset = '/Users/test/Documents/GitHub/Bert-SDP/PROMISE'  # 数据集
 net = Model(Config(dataset))
 print(net)
+
+x=torch.rand(10,256).long()
+seq_len=torch.randn(10).long()
+mask=torch.randn(10,256).long()
+
+out = net((x,seq_len,mask))
+print(out)

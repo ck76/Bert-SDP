@@ -31,6 +31,8 @@ class Config(object):
         self.filter_sizes = (2, 3, 4)                                   # 卷积核尺寸
         self.num_filters = 256                                          # 卷积核数量(channels数)
         self.dropout = 0.1
+        self.rnn_hidden = 768
+        self.num_layers = 2
 
 
 class Model(nn.Module):
@@ -79,6 +81,23 @@ class Model(nn.Module):
         out = self.fc_cnn(out)
         return out
 
+
+
 dataset = '/Users/test/Documents/GitHub/Bert-SDP/PROMISE'  # 数据集
 net = Model(Config(dataset))
-print(net)
+# print(net)
+
+# (convs): ModuleList(
+#     (0): Conv2d(1, 256, kernel_size=(2, 768), stride=(1, 1))
+#     (1): Conv2d(1, 256, kernel_size=(3, 768), stride=(1, 1))
+#     (2): Conv2d(1, 256, kernel_size=(4, 768), stride=(1, 1))
+#   )
+#   (dropout): Dropout(p=0.1, inplace=False)
+#   (fc_cnn): Linear(in_features=768, out_features=2, bias=True)
+
+x=torch.rand(10,256).long()
+seq_len=torch.randn(10).long()
+mask=torch.randn(10,256).long()
+
+out = net((x,seq_len,mask))
+print(out)

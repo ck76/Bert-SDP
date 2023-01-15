@@ -78,11 +78,14 @@ class Model(nn.Module):
 
 
 net = Model(Config("/Users/test/Documents/GitHub/Bert-SDP/PROMISE"))
-print(net)
+# print(net)
 
-params = list(net.parameters())
-print(len(params))
+# params = list(net.parameters())
+# print(len(params))
 
-input = torch.randn(1, 1, 32, 32)
-out = net(input)
+x=torch.rand(10,256).long()
+seq_len=torch.randn(10).long()
+mask=torch.randn(10,256).long()
+
+out = net((x,seq_len,mask))
 print(out)

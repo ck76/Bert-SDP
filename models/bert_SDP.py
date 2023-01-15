@@ -27,6 +27,8 @@ class Config(object):
         self.bert_path = '/Users/test/Documents/GitHub/Bert-SDP/JavaBERT'
         self.tokenizer = BertTokenizer.from_pretrained(self.bert_path)
         self.hidden_size = 768
+        self.rnn_hidden = 768
+        self.num_layers = 2
 
 
 class Model(nn.Module):
@@ -34,6 +36,8 @@ class Model(nn.Module):
     def __init__(self, config):
         super(Model, self).__init__()
         self.bert = BertModel.from_pretrained(config.bert_path)
+        self.lstm = nn.LSTM(config.hidden_size, config.rnn_hidden, config.num_layers,
+                            bidirectional=True, batch_first=True, dropout=config.dropout)
         # self.bert = BertModel.from_pretrained("bert-base-uncased")
         for param in self.bert.parameters():
             param.requires_grad = False
@@ -51,3 +55,10 @@ class Model(nn.Module):
 dataset = '/Users/test/Documents/GitHub/Bert-SDP/PROMISE'  # 数据集
 net = Model(Config(dataset))
 print(net)
+
+x=torch.rand(10,256).long()
+seq_len=torch.randn(10).long()
+mask=torch.randn(10,256).long()
+
+out = net((x,seq_len,mask))
+print(out)
