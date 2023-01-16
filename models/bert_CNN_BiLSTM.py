@@ -94,20 +94,20 @@ class Model(nn.Module):
 
     # torch.Size([1, 1, 256, 768])
     def conv_and_pool(self, x, conv):
-        print(" conv_and_pool -1")
-        print(x.shape)
+        # print(" conv_and_pool -1")
+        # print(x.shape)
         x = conv(x)
-        print(" conv_and_pool -2")
-        print(x.shape)
+        # print(" conv_and_pool -2")
+        # print(x.shape)
         x = F.relu(x)  # 就是压缩（维度减少，降维）
-        print(" conv_and_pool -3")
-        print(x.shape)
+        # print(" conv_and_pool -3")
+        # print(x.shape)
         x = x.squeeze(3)
-        print(" conv_and_pool -4")
-        print(x.shape)
+        # print(" conv_and_pool -4")
+        # print(x.shape)
         x = F.max_pool1d(x, x.size(2)).squeeze(2)
-        print(" conv_and_pool -5")
-        print(x.shape)
+        # print(" conv_and_pool -5")
+        # print(x.shape)
         return x
 
     # x: [batch, seq_len, hidden_dim*2]
@@ -135,11 +135,11 @@ class Model(nn.Module):
         context = x[0]  # 输入的句子
         mask = x[2]  # 对padding部分进行mask，和句子一个size，padding部分用0表示，如：[1, 1, 1, 1, 0, 0]
         encoder_out, text_cls = self.bert(context, attention_mask=mask, output_all_encoded_layers=False)
-        print("1")  # torch.Size([1, 256, 768])
-        print(encoder_out.shape)
+        # print("1")  # torch.Size([1, 256, 768])
+        # print(encoder_out.shape)
         out = encoder_out.unsqueeze(1)
-        print("2")  # torch.Size([1, 1, 256, 768])
-        print(out.shape)
+        # print("2")  # torch.Size([1, 1, 256, 768])
+        # print(out.shape)
         """
         in_channels
           这个很好理解，就是输入的四维张量[N, C, H, W]中的C了，即输入张量的channels数。这个形参是确定权重等可学习参数的shape所必需的。
@@ -156,15 +156,15 @@ class Model(nn.Module):
         out2 = self.conv_and_pool(out, self.conv1)
         out3 = self.conv_and_pool(out, self.conv1)
         out = torch.cat((out1, out2, out3), 1)
-        print("3")  # torch.Size([1, 768])
-        print(out.shape)
+        # print("3")  # torch.Size([1, 768])
+        # print(out.shape)
         # # 序列长度seq_len=5, batch_size=3, 数据向量维数=10
         # input = torch.randn(5, 3, 10)
         # 论词的，一个词一行啊
         # 2、torch.randn(5, 3, 10) 数据中第一维度5（有5组数据，每组3行，每行10列）
         out = out.view(out.size(0), -1, out.size(-1))
-        print("4")  # torch.Size([1, 1, 768])
-        print(out.shape)
+        # print("4")  # torch.Size([1, 1, 768])
+        # print(out.shape)
         out, (hidden, cell) = self.lstm(out)
 
         # ----------
@@ -173,8 +173,8 @@ class Model(nn.Module):
         query = self.dropout(out)
         # 加入attention机制
         attn_output, alpha_n = self.attention_net(out, query)
-        print("attn_output")
-        print(attn_output.shape)
+        # print("attn_output")
+        # print(attn_output.shape)
         out = self.fc_cnn(attn_output)
         # ----------
 
