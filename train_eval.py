@@ -64,20 +64,24 @@ def train(config, model, train_iter, dev_iter, test_iter):
                 print("hhhhh")
                 print(trains)
                 # hhhhh-0torch.Size([64, 256])
-                print("hhhhh-0"+str(trains[0].shape))
+                print("hhhhh-0:"+str(trains[0].shape))
                 print(trains[0])
                 # hhhhh-1torch.Size([64])
-                print("hhhhh-1"+str(trains[1].shape))
+                print("hhhhh-1:"+str(trains[1].shape))
                 print(trains[1])
                 # hhhhh-2torch.Size([64, 256])
-                print("hhhhh-2"+str(trains[2].shape))
+                print("hhhhh-2:"+str(trains[2].shape))
                 print(trains[2])
                 # labelstorch.Size([64])
-                print("hhhhh-labels"+str(labels.shape))
+                print("hhhhh-labels:"+str(labels.shape))
                 print(labels)
                 flag_print_trains_shape=False
+            # print("labels-for train:")
+            # print(labels)
             # 训练并且得到训练输出
             outputs = model(trains)
+            # print("labels-for outputs:")
+            # print(outputs)
             #
             model.zero_grad()
             # 计算loss

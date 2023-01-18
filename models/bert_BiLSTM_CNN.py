@@ -7,6 +7,7 @@ import torch.nn.functional as F
 from pytorch_pretrained import BertModel, BertTokenizer
 import pandas as pd
 import numpy as np
+import os
 
 
 # from transformers import AutoTokenizer, AutoModelForMaskedLM
@@ -28,22 +29,25 @@ def pre_process_data(path):
 class Config(object):
     """配置参数"""
 
-    def __init__(self, dataset, project_name="ant"):
+    # TODO Update
+    def __init__(self, dataset="PROMISE", project_name="ant"):
         self.model_name = 'bert_cnn_bilstm_sdp'
         self.train_path = dataset + '/data/' + project_name + '/train.txt'  # 训练集
         self.dev_path = dataset + '/data/' + project_name + '/dev.txt'  # 验证集
         self.test_path = dataset + '/data/' + project_name + '/test.txt'  # 测试集
+        print(os.getcwd())
         self.class_list = [x.strip() for x in open(
             dataset + '/data/ant/class.txt').readlines()]  # 类别名单
         self.save_path = dataset + '/saved_dict/' + self.model_name + '.ckpt'  # 模型训练结果
         self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')  # 设备
         self.require_improvement = 1000  # 若超过1000batch效果还没提升，则提前结束训练
         self.num_classes = len(self.class_list)  # 类别数
-        self.num_epochs = 3  # epoch数
-        self.batch_size = 64  # mini-batch大小 todo 太大的话可能会导致我的电脑内存泄漏
+        self.num_epochs = 1  # epoch数
+        self.batch_size = 128  # mini-batch大小 todo 太大的话可能会导致我的电脑内存泄漏
         self.pad_size = 256  # 每句话处理成的长度(短填长切)
         self.learning_rate = 5e-5  # 学习率
-        self.bert_path = '/Users/test/Documents/GitHub/Bert-SDP/JavaBERT'
+        # TODO Update
+        self.bert_path = 'JavaBERT'
         # self.tokenizer =  AutoTokenizer.from_pretrained("CAUKiel/JavaBERT")
         self.tokenizer = BertTokenizer.from_pretrained(self.bert_path)
         self.hidden_size = 768
@@ -187,18 +191,18 @@ class Model(nn.Module):
         return out
 
 
-net = Model(Config("/Users/test/Documents/GitHub/Bert-SDP/PROMISE"))
-print(net)
-
-# params = list(net.parameters())
-# print(len(params))
-
-x = torch.rand(1, 256).long()
-seq_len = torch.randn(1).long()
-mask = torch.randn(1, 256).long()
-print(type(x.shape))
-out = net((x, seq_len, mask))
-print(out)
+# net = Model(Config())
+# print(net)
+#
+# # params = list(net.parameters())
+# # print(len(params))
+#
+# x = torch.rand(1, 256).long()
+# seq_len = torch.randn(1).long()
+# mask = torch.randn(1, 256).long()
+# print(type(x.shape))
+# out = net((x, seq_len, mask))
+# print(out)
 
 #  (lstm): LSTM(768, 768, num_layers=2, batch_first=True, dropout=0.1, bidirectional=True)
 #   (convs): ModuleList(

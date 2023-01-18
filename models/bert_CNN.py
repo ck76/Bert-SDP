@@ -8,7 +8,7 @@ from pytorch_pretrained import BertModel, BertTokenizer
 class Config(object):
 
     """配置参数"""
-    def __init__(self, dataset, project_name="ant"):
+    def __init__(self, dataset="PROMISE", project_name="ant"):
         self.model_name = 'bert_cnn'
         self.train_path = dataset + '/data/'+project_name+'/train.txt'                                # 训练集
         self.dev_path = dataset + '/data/'+project_name+'/dev.txt'                                    # 验证集
@@ -20,12 +20,12 @@ class Config(object):
 
         self.require_improvement = 1000                                 # 若超过1000batch效果还没提升，则提前结束训练
         self.num_classes = len(self.class_list)                         # 类别数
-        self.num_epochs = 3                                             # epoch数
+        self.num_epochs = 1                                             # epoch数
         self.batch_size = 128                                           # mini-batch大小
         # todo pad_size
         self.pad_size = 256                                              # 每句话处理成的长度(短填长切)
         self.learning_rate = 5e-5                                       # 学习率
-        self.bert_path = '/Users/test/Documents/GitHub/Bert-SDP/JavaBERT'
+        self.bert_path = 'JavaBERT'
         self.tokenizer = BertTokenizer.from_pretrained(self.bert_path)
         self.hidden_size = 768
         self.filter_sizes = (2, 3, 4)                                   # 卷积核尺寸
@@ -56,6 +56,7 @@ class Model(nn.Module):
         self.dropout = nn.Dropout(config.dropout)
 
         self.fc_cnn = nn.Linear(config.num_filters * len(config.filter_sizes), config.num_classes)
+        self.sigmoid = nn.Sigmoid()
 
     def conv_and_pool(self, x, conv):
         x = F.relu(conv(x)).squeeze(3)
@@ -79,25 +80,26 @@ class Model(nn.Module):
         out = torch.cat([self.conv_and_pool(out, conv) for conv in self.convs], 1)
         out = self.dropout(out)
         out = self.fc_cnn(out)
+        out = self.sigmoid(out)
         return out
 
 
 
-dataset = '/Users/test/Documents/GitHub/Bert-SDP/PROMISE'  # 数据集
-net = Model(Config(dataset))
-# print(net)
-
-# (convs): ModuleList(
-#     (0): Conv2d(1, 256, kernel_size=(2, 768), stride=(1, 1))
-#     (1): Conv2d(1, 256, kernel_size=(3, 768), stride=(1, 1))
-#     (2): Conv2d(1, 256, kernel_size=(4, 768), stride=(1, 1))
-#   )
-#   (dropout): Dropout(p=0.1, inplace=False)
-#   (fc_cnn): Linear(in_features=768, out_features=2, bias=True)
-
-x=torch.rand(10,256).long()
-seq_len=torch.randn(10).long()
-mask=torch.randn(10,256).long()
-
-out = net((x,seq_len,mask))
-print(out)
+# dataset = '/Users/test/Documents/GitHub/Bert-SDP/PROMISE'  # 数据集
+# net = Model(Config(dataset))
+# # print(net)
+#
+# # (convs): ModuleList(
+# #     (0): Conv2d(1, 256, kernel_size=(2, 768), stride=(1, 1))
+# #     (1): Conv2d(1, 256, kernel_size=(3, 768), stride=(1, 1))
+# #     (2): Conv2d(1, 256, kernel_size=(4, 768), stride=(1, 1))
+# #   )
+# #   (dropout): Dropout(p=0.1, inplace=False)
+# #   (fc_cnn): Linear(in_features=768, out_features=2, bias=True)
+#
+# x=torch.rand(10,256).long()
+# seq_len=torch.randn(10).long()
+# mask=torch.randn(10,256).long()
+#
+# out = net((x,seq_len,mask))
+# print(out)

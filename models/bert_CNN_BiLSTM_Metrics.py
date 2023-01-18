@@ -21,7 +21,7 @@ def pre_process_data(path):
 class Config(object):
 
     """配置参数"""
-    def __init__(self, dataset, project_name="ant"):
+    def __init__(self, dataset="PROMISE", project_name="ant"):
         self.model_name = 'bert_cnn_bilstm_metrics_sdp'
         self.train_path = dataset + '/data/'+project_name+'/train.txt'  # 训练集
         self.dev_path = dataset + '/data/'+project_name+'/dev.txt'  # 验证集
@@ -32,11 +32,11 @@ class Config(object):
         self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')   # 设备
         self.require_improvement = 1000                                 # 若超过1000batch效果还没提升，则提前结束训练
         self.num_classes = len(self.class_list)                         # 类别数
-        self.num_epochs = 3                                             # epoch数
-        self.batch_size = 64                                           # mini-batch大小 todo 太大的话可能会导致我的电脑内存泄漏
+        self.num_epochs = 1                                             # epoch数
+        self.batch_size = 128                                           # mini-batch大小 todo 太大的话可能会导致我的电脑内存泄漏
         self.pad_size = 256                                              # 每句话处理成的长度(短填长切)
         self.learning_rate = 5e-5                                       # 学习率
-        self.bert_path = '/Users/test/Documents/GitHub/Bert-SDP/JavaBERT'
+        self.bert_path = 'JavaBERT'
         # self.tokenizer =  AutoTokenizer.from_pretrained("CAUKiel/JavaBERT")
         self.tokenizer = BertTokenizer.from_pretrained(self.bert_path)
         self.hidden_size = 768

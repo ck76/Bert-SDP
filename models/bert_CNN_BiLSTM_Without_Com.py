@@ -29,7 +29,7 @@ class Config(object):
     """配置参数"""
 
     def __init__(self, dataset="PROMISE", project_name="ant"):
-        self.model_name = 'bert_cnn_bilstm_sdp'
+        self.model_name = 'bert_cnn_bilstm_without_com'
         self.train_path = dataset + '/data/' + project_name + '/train.txt'  # 训练集
         self.dev_path = dataset + '/data/' + project_name + '/dev.txt'  # 验证集
         self.test_path = dataset + '/data/' + project_name + '/test.txt'  # 测试集
@@ -74,11 +74,11 @@ class Model(nn.Module):
         #             would mean stacking two LSTMs together to form a `stacked LSTM`,
         #             with the second LSTM taking in outputs of the first LSTM and
         #             computing the final results. Default: 1
-        self.lstm = nn.LSTM(config.hidden_size, config.rnn_hidden, config.num_layers,
+        self.lstm = nn.LSTM(1, config.rnn_hidden, config.num_layers,
                             bidirectional=True, batch_first=True, dropout=config.dropout)
-        self.conv1 = nn.Conv2d(1, config.num_filters, (10, config.hidden_size))
-        self.conv2 = nn.Conv2d(1, config.num_filters, (4, config.hidden_size))
-        self.conv3 = nn.Conv2d(1, config.num_filters, (3, config.hidden_size))
+        self.conv1 = nn.Conv2d(1, 1, (10, config.hidden_size))
+        self.conv2 = nn.Conv2d(1, 1, (4, config.hidden_size))
+        self.conv3 = nn.Conv2d(1, 1, (3, config.hidden_size))
         # self.conv2 = nn.Conv2d(1, config.num_filters, (5, config.hidden_size))
         for param in self.bert.parameters():
             param.requires_grad = False
@@ -99,13 +99,13 @@ class Model(nn.Module):
         x = conv(x)
         # print(" conv_and_pool -2")
         # print(x.shape)
-        x = F.relu(x)  # 就是压缩（维度减少，降维）
+        # x = F.relu(x)  # 就是压缩（维度减少，降维）
         # print(" conv_and_pool -3")
         # print(x.shape)
-        x = x.squeeze(3)
+        # x = x.squeeze(3)
         # print(" conv_and_pool -4")
         # print(x.shape)
-        x = F.max_pool1d(x, x.size(2)).squeeze(2)
+        # x = F.max_pool1d(x, x.size(2)).squeeze(2)
         # print(" conv_and_pool -5")
         # print(x.shape)
         return x
@@ -152,10 +152,11 @@ class Model(nn.Module):
         原文链接：https://blog.csdn.net/qq_42079689/article/details/102642610
         """
         # out = torch.cat([self.conv_and_pool(out, conv) for conv in self.convs], 1)
-        out1 = self.conv_and_pool(out, self.conv1)
-        out2 = self.conv_and_pool(out, self.conv1)
-        out3 = self.conv_and_pool(out, self.conv1)
-        out = torch.cat((out1, out2, out3), 1)
+        # out1 = self.conv_and_pool(out, self.conv1)
+        # out2 = self.conv_and_pool(out, self.conv1)
+        # out3 = self.conv_and_pool(out, self.conv1)
+        # out = torch.cat((out1, out2, out3), 1)
+        out = self.conv_and_pool(out, self.conv1)
         # print("3")  # torch.Size([1, 768])
         # print(out.shape)
         # # 序列长度seq_len=5, batch_size=3, 数据向量维数=10
@@ -187,18 +188,18 @@ class Model(nn.Module):
         return out
 
 
-net = Model(Config("/Users/test/Documents/GitHub/Bert-SDP/PROMISE"))
-print(net)
-
-# params = list(net.parameters())
-# print(len(params))
-
-x = torch.rand(1, 256).long()
-seq_len = torch.randn(1).long()
-mask = torch.randn(1, 256).long()
-print(type(x.shape))
-out = net((x, seq_len, mask))
-print(out)
+# net = Model(Config("../PROMISE"))
+# print(net)
+#
+# # params = list(net.parameters())
+# # print(len(params))
+#
+# x = torch.rand(1, 256).long()
+# seq_len = torch.randn(1).long()
+# mask = torch.randn(1, 256).long()
+# print(type(x.shape))
+# out = net((x, seq_len, mask))
+# print(out)
 
 #  (lstm): LSTM(768, 768, num_layers=2, batch_first=True, dropout=0.1, bidirectional=True)
 #   (convs): ModuleList(

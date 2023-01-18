@@ -29,7 +29,7 @@ class Config(object):
     """配置参数"""
 
     def __init__(self, dataset="PROMISE", project_name="ant"):
-        self.model_name = 'bert_cnn_bilstm_sdp'
+        self.model_name = 'bert_cnn_bilstm_'
         self.train_path = dataset + '/data/' + project_name + '/train.txt'  # 训练集
         self.dev_path = dataset + '/data/' + project_name + '/dev.txt'  # 验证集
         self.test_path = dataset + '/data/' + project_name + '/test.txt'  # 测试集
@@ -43,7 +43,7 @@ class Config(object):
         self.batch_size = 128  # mini-batch大小 todo 太大的话可能会导致我的电脑内存泄漏
         self.pad_size = 256  # 每句话处理成的长度(短填长切)
         self.learning_rate = 5e-5  # 学习率
-        self.bert_path = 'JavaBERT'
+        self.bert_path = '../JavaBERT'
         # self.tokenizer =  AutoTokenizer.from_pretrained("CAUKiel/JavaBERT")
         self.tokenizer = BertTokenizer.from_pretrained(self.bert_path)
         self.hidden_size = 768
@@ -74,11 +74,11 @@ class Model(nn.Module):
         #             would mean stacking two LSTMs together to form a `stacked LSTM`,
         #             with the second LSTM taking in outputs of the first LSTM and
         #             computing the final results. Default: 1
-        self.lstm = nn.LSTM(config.hidden_size, config.rnn_hidden, config.num_layers,
+        self.lstm = nn.LSTM(1, config.rnn_hidden, config.num_layers,
                             bidirectional=True, batch_first=True, dropout=config.dropout)
-        self.conv1 = nn.Conv2d(1, config.num_filters, (10, config.hidden_size))
-        self.conv2 = nn.Conv2d(1, config.num_filters, (4, config.hidden_size))
-        self.conv3 = nn.Conv2d(1, config.num_filters, (3, config.hidden_size))
+        self.conv1 = nn.Conv2d(1, 1, (10, config.hidden_size))
+        self.conv2 = nn.Conv2d(1, 1, (4, config.hidden_size))
+        self.conv3 = nn.Conv2d(1, 1, (3, config.hidden_size))
         # self.conv2 = nn.Conv2d(1, config.num_filters, (5, config.hidden_size))
         for param in self.bert.parameters():
             param.requires_grad = False
@@ -94,18 +94,18 @@ class Model(nn.Module):
 
     # torch.Size([1, 1, 256, 768])
     def conv_and_pool(self, x, conv):
-        # print(" conv_and_pool -1")
-        # print(x.shape)
+        print(" conv_and_pool -1")
+        print(x.shape)
         x = conv(x)
-        # print(" conv_and_pool -2")
+        print(" conv_and_pool -2")
+        print(x.shape)
+        # x = F.relu(x)  # 就是压缩（维度减少，降维）
+        print(" conv_and_pool -3")
         # print(x.shape)
-        x = F.relu(x)  # 就是压缩（维度减少，降维）
-        # print(" conv_and_pool -3")
-        # print(x.shape)
-        x = x.squeeze(3)
+        # x = x.squeeze(3)
         # print(" conv_and_pool -4")
         # print(x.shape)
-        x = F.max_pool1d(x, x.size(2)).squeeze(2)
+        # x = F.max_pool1d(x, x.size(2)).squeeze(2)
         # print(" conv_and_pool -5")
         # print(x.shape)
         return x
@@ -135,11 +135,11 @@ class Model(nn.Module):
         context = x[0]  # 输入的句子
         mask = x[2]  # 对padding部分进行mask，和句子一个size，padding部分用0表示，如：[1, 1, 1, 1, 0, 0]
         encoder_out, text_cls = self.bert(context, attention_mask=mask, output_all_encoded_layers=False)
-        # print("1")  # torch.Size([1, 256, 768])
-        # print(encoder_out.shape)
+        print("1")  # torch.Size([1, 256, 768])
+        print(encoder_out.shape)
         out = encoder_out.unsqueeze(1)
-        # print("2")  # torch.Size([1, 1, 256, 768])
-        # print(out.shape)
+        print("2")  # torch.Size([1, 1, 256, 768])
+        print(out.shape)
         """
         in_channels
           这个很好理解，就是输入的四维张量[N, C, H, W]中的C了，即输入张量的channels数。这个形参是确定权重等可学习参数的shape所必需的。
@@ -152,19 +152,20 @@ class Model(nn.Module):
         原文链接：https://blog.csdn.net/qq_42079689/article/details/102642610
         """
         # out = torch.cat([self.conv_and_pool(out, conv) for conv in self.convs], 1)
-        out1 = self.conv_and_pool(out, self.conv1)
-        out2 = self.conv_and_pool(out, self.conv1)
-        out3 = self.conv_and_pool(out, self.conv1)
-        out = torch.cat((out1, out2, out3), 1)
-        # print("3")  # torch.Size([1, 768])
-        # print(out.shape)
+        # out1 = self.conv_and_pool(out, self.conv1)
+        # out2 = self.conv_and_pool(out, self.conv1)
+        # out3 = self.conv_and_pool(out, self.conv1)
+        # out = torch.cat((out1, out2, out3), 1)
+        out = self.conv_and_pool(out, self.conv1)
+        print("3")  # torch.Size([1, 768])
+        print(out.shape)
         # # 序列长度seq_len=5, batch_size=3, 数据向量维数=10
         # input = torch.randn(5, 3, 10)
         # 论词的，一个词一行啊
         # 2、torch.randn(5, 3, 10) 数据中第一维度5（有5组数据，每组3行，每行10列）
         out = out.view(out.size(0), -1, out.size(-1))
-        # print("4")  # torch.Size([1, 1, 768])
-        # print(out.shape)
+        print("4")  # torch.Size([1, 1, 768])
+        print(out.shape)
         out, (hidden, cell) = self.lstm(out)
 
         # ----------
@@ -179,15 +180,15 @@ class Model(nn.Module):
         # ----------
 
 
-        # print("5")  # torch.Size([1, 1, 1536])
-        # print(out.shape)
+        print("5")  # torch.Size([1, 1, 1536])
+        print(out.shape)
         # out = self.fc_cnn(out)
         # print("6")
         # print(out.shape)
         return out
 
 
-net = Model(Config("/Users/test/Documents/GitHub/Bert-SDP/PROMISE"))
+net = Model(Config("../PROMISE"))
 print(net)
 
 # params = list(net.parameters())

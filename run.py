@@ -7,18 +7,22 @@ from importlib import import_module
 import argparse
 from utils import build_dataset, build_iterator, get_time_dif
 
-parser = argparse.ArgumentParser(description='Chinese Text Classification')
-parser.add_argument('--model', type=str, required=True, help='choose a model: Bert, ERNIE')
+parser = argparse.ArgumentParser(description='Text Classification')
+# parser.add_argument('--model', type=str, required=True, help='choose a model: Bert, ERNIE')
 args = parser.parse_args()
 
 
+
 if __name__ == '__main__':
-    dataset = 'PROMISE'  # 数据集
+    # dataset = '../PROMISE'  # 数据集
     project_name ="ant"
     # todo 从这里控制模型的选择
-    model_name = args.model  # bert
+    # model_name = args.model  #
+    # model_name = "bert_CNN_BiLSTM_Without_Com"
+    model_name = "bert_RCNN"
     x = import_module('models.' + model_name)
-    config = x.Config(dataset)
+    # config = x.Config(dataset)
+    config = x.Config()
     np.random.seed(1)
     torch.manual_seed(1)
     torch.cuda.manual_seed_all(1)
