@@ -29,6 +29,7 @@ class Config(object):
         self.hidden_size = 768
         self.rnn_hidden = 768
         self.num_layers = 2
+        self.dropout = 0.1
 
 
 class Model(nn.Module):
@@ -48,17 +49,15 @@ class Model(nn.Module):
         mask = x[2]  # 对padding部分进行mask，和句子一个size，padding部分用0表示，如：[1, 1, 1, 1, 0, 0]
         _, pooled = self.bert(context, attention_mask=mask, output_all_encoded_layers=False)
         out = self.fc(pooled)
-        # print(x)
-        # TODO 后续拼接CNN和LSTM
         return out
 
-dataset = '/Users/test/Documents/GitHub/Bert-SDP/PROMISE'  # 数据集
-net = Model(Config(dataset))
-print(net)
-
-x=torch.rand(10,256).long()
-seq_len=torch.randn(10).long()
-mask=torch.randn(10,256).long()
-
-out = net((x,seq_len,mask))
-print(out)
+# dataset = '/Users/test/Documents/GitHub/Bert-SDP/PROMISE'  # 数据集
+# net = Model(Config(dataset))
+# print(net)
+#
+# x=torch.rand(10,256).long()
+# seq_len=torch.randn(10).long()
+# mask=torch.randn(10,256).long()
+#
+# out = net((x,seq_len,mask))
+# print(out)
