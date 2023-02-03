@@ -170,6 +170,7 @@ def evaluate(config, model, data_iter, test=False):
             predic = torch.max(outputs.data, 1)[1].cpu().numpy()
             labels_all = np.append(labels_all, labels)
             predict_all = np.append(predict_all, predic)
+    print("验证集：")
     print(labels_all)
     print(predict_all)
     acc = metrics.accuracy_score(labels_all, predict_all)

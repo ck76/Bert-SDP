@@ -19,7 +19,10 @@ if __name__ == '__main__':
     # todo 从这里控制模型的选择
     # model_name = args.model  #
     # model_name = "bert_CNN_BiLSTM_Without_Com"
-    model_name = "bert_SDP"
+    model_name = "bert_CNN"
+    # model_name = "bert_RNN"
+    # model_name = "bert_BiLSTM"
+    # model_name = "bert_SDP"
     print(model_name)
     x = import_module('models.' + model_name)
     # config = x.Config(dataset)
