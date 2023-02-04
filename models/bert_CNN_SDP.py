@@ -34,7 +34,7 @@ class Config(object):
         self.num_classes = 2                        # 类别数
         self.num_epochs = 1                                             # epoch数
         self.batch_size = 128                                           # mini-batch大小 todo 太大的话可能会导致我的电脑内存泄漏
-        self.pad_size = 256                                              # 每句话处理成的长度(短填长切)
+        self.pad_size = 512                                              # 每句话处理成的长度(短填长切)
         self.learning_rate = 5e-5                                       # 学习率
         self.bert_path = 'JavaBERT'
         self.tokenizer = BertTokenizer.from_pretrained(self.bert_path)
@@ -77,13 +77,13 @@ class Model(nn.Module):
         out = self.fc_cnn(out)
         return out
 
-dataset = '/Users/test/Documents/GitHub/Bert-SDP/PROMISE'  # 数据集
-net = Model(Config(dataset))
-# print(net)
-
-x=torch.rand(10,256).long()
-seq_len=torch.randn(10).long()
-mask=torch.randn(10,256).long()
-
-out = net((x,seq_len,mask))
-print(out)
+# dataset = '/Users/test/Documents/GitHub/Bert-SDP/PROMISE'  # 数据集
+# net = Model(Config(dataset))
+# # print(net)
+#
+# x=torch.rand(10,256).long()
+# seq_len=torch.randn(10).long()
+# mask=torch.randn(10,256).long()
+#
+# out = net((x,seq_len,mask))
+# print(out)
