@@ -40,6 +40,7 @@ class Model(nn.Module):
 
     def __init__(self, config):
         super(Model, self).__init__()
+        self.config=config
         self.bert = BertModel.from_pretrained(config.bert_path)
         # TODO 应该是在这更新了bert
         for param in self.bert.parameters():
@@ -68,7 +69,8 @@ class Model(nn.Module):
         out = out.permute(0, 2, 1)
         # torch.Size([128, 128, 512])
         print(out.shape)
-        out = self.maxpool(out).squeeze()
+        out=out.view(-1,self.config.rnn_hidden * 2)
+        # out = self.maxpool(out).squeeze()
         # torch.Size([128, 128])
         print(out.shape)
         out = self.fc(out)

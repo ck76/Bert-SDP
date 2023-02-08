@@ -39,10 +39,10 @@ class Config(object):
         self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')  # 设备
         self.require_improvement = 1000  # 若超过1000batch效果还没提升，则提前结束训练
         self.num_classes = 2 # 类别数
-        self.num_epochs = 2  # epoch数  todo 随时更改1，2,3,4,5
+        self.num_epochs = 1  # epoch数  todo 随时更改1，2,3,4,5
         self.batch_size = 128  # mini-batch大小 todo 太大的话可能会导致我的电脑内存泄漏
         self.pad_size = 512  # 每句话处理成的长度(短填长切)
-        self.learning_rate = 0.001  # 学习率  todo 试着调高试，表现不好
+        self.learning_rate = 0.001  # 学习率 todo 试着调高试
         self.bert_path = 'JavaBERT'
         # self.tokenizer =  AutoTokenizer.from_pretrained("CAUKiel/JavaBERT")
         self.tokenizer = BertTokenizer.from_pretrained(self.bert_path)
@@ -187,8 +187,8 @@ class Model(nn.Module):
         # out = self.fc_cnn(attn_output)
         # ----------
 
-        out=out.reshape(out.size(0),-1)
-        print(out.shape)
+        # out=out.reshape(self.config.batch_size,-1)
+        # print(out.shape)
 
         """
         torch.Size([128, 512, 768])
@@ -198,13 +198,13 @@ class Model(nn.Module):
         torch.Size([128, 508, 128])
         torch.Size([128, 65024])
         """
-        # # todo 这样不好----------------------------
-        # print(out.shape)
-        # out = out.permute(0, 2, 1)
-        # print(out.shape)
+        # todo 这样不好吧？----------------------------
+        out = out.permute(0, 2, 1)
+        print(out.shape)
+        out=out.squeeze(2)
         # out = self.maxpool(out).squeeze()
-        # print(out.shape)
-        # # todo 这样不好----------------------------
+        print(out.shape)
+        # todo 这样不好吧？----------------------------
 
 
 

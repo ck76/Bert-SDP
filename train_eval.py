@@ -7,7 +7,7 @@ from sklearn import metrics
 import time
 from utils import get_time_dif
 from pytorch_pretrained.optimization import BertAdam
-
+from torchsummary import summary
 
 # 权重初始化，默认xavier
 # def init_network(model, method='xavier', exclude='embedding', seed=123):
@@ -51,14 +51,18 @@ def train(config, model, train_iter, dev_iter, test_iter):
     last_improve = 0
     # 记录是否很久没有效果提升
     flag = False
+    print(model)
     # 开始训练
     model.train()
+    # todo print model
+    # summary(model,(64,256,64))
     flag_print_trains_shape=True
     # 3 rounds
     for epoch in range(config.num_epochs):
         print('Epoch [{}/{}]'.format(epoch + 1, config.num_epochs))
         for i, (trains, labels) in enumerate(train_iter):
             # print(str(i)+"-------"+str(len(train_iter))+"------" +str(trains)+"!"+str(labels))
+            # print(trains.shape)
             print(str(i) + "-------" + str(len(train_iter)) )
             if flag_print_trains_shape:
                 print("hhhhh")
@@ -101,8 +105,9 @@ def train(config, model, train_iter, dev_iter, test_iter):
             loss.backward()
             # 优化器   向后传播，计算当前梯度，如果这步不执行，那么优化器更新时则会找不到梯度
             optimizer.step()
-            # print(list(model.children())[1][0].weight.grad)
-            print(list(model.children()))
+            # todo
+            # print(list(model.children())[1].weight.grad)
+            # print(list(model.children()))
             # todo 100轮才打印一回，怪不得看不到
             if total_batch % 1 == 0:
                 # 每多少轮输出在训练集和验证集上的效果

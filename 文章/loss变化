@@ -1,0 +1,18 @@
+2、对于loss的变化情况，主要有以下几种可能性：上升、下降、不变，对应的数据集有train与val（validation），那么进行组合有如下的可能：
+
+train loss 不断下降，val loss 不断下降——网络仍在学习；
+
+train loss 不断下降，val loss 不断上升——网络过拟合；
+
+train loss 不断下降，val loss 趋于不变——网络欠拟合；
+
+train loss 趋于不变，val loss 趋于不变——网络陷入瓶颈；
+
+train loss 不断上升，val loss 不断上升——网络结构问题；
+
+train loss 不断上升，val loss 不断下降——数据集有问题；
+
+其余的情况，也是归于网络结构问题与数据集问题中。
+————————————————
+版权声明：本文为CSDN博主「a flying bird」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/m0_37870649/article/details/99845556
