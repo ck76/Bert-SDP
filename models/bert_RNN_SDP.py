@@ -3,6 +3,9 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from pytorch_pretrained import BertModel, BertTokenizer
+import hiddenlayer as h
+from torchviz import make_dot
+from tensorboardX import SummaryWriter
 
 
 class Config(object):

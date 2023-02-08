@@ -78,18 +78,31 @@ def train(config, model, train_iter, dev_iter, test_iter):
                 flag_print_trains_shape=False
             # print("labels-for train:")
             # print(labels)
+            """
+                在学习pytorch的时候注意到，对于每个batch大都执行了这样的操作：
+                optimizer.zero_grad()             ## 梯度清零
+                preds = model(inputs)             ## inference
+                loss = criterion(preds, targets)  ## 求解loss
+                loss.backward()                   ## 反向传播求解梯度
+                optimizer.step()                  ## 更新权重参数
+                ————————————————
+                版权声明：本文为CSDN博主「liming89」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+                原文链接：https://blog.csdn.net/liming89/article/details/110806079
+            """
             # 训练并且得到训练输出
             outputs = model(trains)
             # print("labels-for outputs:")
             # print(outputs)
-            #
+            ## 计算损失值
             model.zero_grad()
             # 计算loss
             loss = F.cross_entropy(outputs, labels)
             # 反向传播
             loss.backward()
-            # 优化器
+            # 优化器   向后传播，计算当前梯度，如果这步不执行，那么优化器更新时则会找不到梯度
             optimizer.step()
+            # print(list(model.children())[1][0].weight.grad)
+            print(list(model.children()))
             # todo 100轮才打印一回，怪不得看不到
             if total_batch % 1 == 0:
                 # 每多少轮输出在训练集和验证集上的效果
@@ -97,6 +110,9 @@ def train(config, model, train_iter, dev_iter, test_iter):
                 true = labels.data.cpu()
                 # 模型预测输出标签
                 predic = torch.max(outputs.data, 1)[1].cpu()
+                print("训练集：")
+                print(true)
+                print(predic)
                 # 训练准确率
                 train_acc = metrics.accuracy_score(true, predic)
                 # 验证集 evaluate
