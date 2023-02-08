@@ -20,10 +20,10 @@ class Config(object):
 
         self.require_improvement = 1000                                 # 若超过1000batch效果还没提升，则提前结束训练
         self.num_classes = 2                        # 类别数
-        self.num_epochs = 1                                             # epoch数
+        self.num_epochs = 2                                             # epoch数
         self.batch_size = 128                                           # mini-batch大小
         self.pad_size = 512                                             # 每句话处理成的长度(短填长切)
-        self.learning_rate = 5e-5                                       # 学习率
+        self.learning_rate = 0.1                                       # 学习率
         self.bert_path = 'JavaBERT'
         self.tokenizer = BertTokenizer.from_pretrained(self.bert_path)
         self.hidden_size = 768

@@ -30,7 +30,7 @@ class Config(object):
         self.hidden_size = 768
         self.filter_sizes = (2, 3, 4)                                   # 卷积核尺寸
         self.num_filters = 512                                          # 卷积核数量(channels数)
-        self.dropout = 0.1
+        self.dropout = 0.01
         self.rnn_hidden = 768
         self.num_layers = 2
 
