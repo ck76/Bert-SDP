@@ -39,10 +39,11 @@ class Config(object):
         self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')  # 设备
         self.require_improvement = 1000  # 若超过1000batch效果还没提升，则提前结束训练
         self.num_classes = 2 # 类别数
-        self.num_epochs = 1  # epoch数  todo 随时更改1，2,3,4,5
+        self.num_epochs = 2  # epoch数  todo 随时更改1，2,3,4,5
         self.batch_size = 128  # mini-batch大小 todo 太大的话可能会导致我的电脑内存泄漏
         self.pad_size = 512  # 每句话处理成的长度(短填长切)
-        self.learning_rate = 0.001  # 学习率 todo 试着调高试
+        # 从自己和其他人一般的经验来看，学习率可以设置为3、1、0.5、0.1、0.05、0.01、0.005，0.005、0.0001、0.00001具体需结合实际情况对比判断，小的学习率收敛慢，但能将loss值降到更低。
+        self.learning_rate = 0.00001  # 学习率 todo 试着调高试
         self.bert_path = 'JavaBERT'
         # self.tokenizer =  AutoTokenizer.from_pretrained("CAUKiel/JavaBERT")
         self.tokenizer = BertTokenizer.from_pretrained(self.bert_path)
@@ -97,8 +98,8 @@ class Model(nn.Module):
             [nn.Conv2d(1, config.num_filters, (k, config.hidden_size)) for k in config.filter_sizes])
         self.dropout = nn.Dropout(config.dropout)
 
-        self.fc_cnn = nn.Linear(config.rnn_hidden * config.num_layers * config.fc_1, config.num_classes)
-        self.maxpool = nn.MaxPool1d(config.pad_size)
+        self.fc_cnn = nn.Linear(config.rnn_hidden * config.num_layers, config.num_classes)
+        self.maxpool = nn.MaxPool1d(config.fc_1)
 
     # torch.Size([1, 1, 256, 768])
     def conv_and_pool(self, x, conv):
@@ -201,7 +202,9 @@ class Model(nn.Module):
         # todo 这样不好吧？----------------------------
         out = out.permute(0, 2, 1)
         print(out.shape)
-        out=out.squeeze(2)
+        out = self.maxpool(out)
+        print(out.shape)
+        out = out.squeeze()
         # out = self.maxpool(out).squeeze()
         print(out.shape)
         # todo 这样不好吧？----------------------------
