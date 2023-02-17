@@ -57,12 +57,12 @@ class DatasetIterater(object):
         self.device = device
 
     def _to_tensor(self, datas):
-        x = torch.LongTensor([_[0] for _ in datas]).to(self.device)
-        y = torch.LongTensor([_[1] for _ in datas]).to(self.device)
+        x = torch.LongTensor([_[0] for _ in datas])
+        y = torch.LongTensor([_[1] for _ in datas])
 
         # pad前的长度(超过pad_size的设为pad_size)
-        seq_len = torch.LongTensor([_[2] for _ in datas]).to(self.device)
-        mask = torch.LongTensor([_[3] for _ in datas]).to(self.device)
+        seq_len = torch.LongTensor([_[2] for _ in datas])
+        mask = torch.LongTensor([_[3] for _ in datas])
         # todo 不管如何   是这两样
         return (x, seq_len, mask), y
 

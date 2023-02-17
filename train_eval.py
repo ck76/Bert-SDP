@@ -7,8 +7,8 @@ from sklearn import metrics
 import time
 from utils import get_time_dif
 from pytorch_pretrained.optimization import BertAdam
-from torchsummary import summary
-
+# from torchsummary import summary
+#
 # 权重初始化，默认xavier
 # def init_network(model, method='xavier', exclude='embedding', seed=123):
 #     for name, w in model.named_parameters():
@@ -61,6 +61,13 @@ def train(config, model, train_iter, dev_iter, test_iter):
     for epoch in range(config.num_epochs):
         print('Epoch [{}/{}]'.format(epoch + 1, config.num_epochs))
         for i, (trains, labels) in enumerate(train_iter):
+            # todo 清理内存？
+            trains=list(trains)
+            trains[0]=trains[0].to(train_iter.device)
+            trains[1] = trains[1].to(train_iter.device)
+            trains[2] = trains[2].to(train_iter.device)
+            trains=tuple(trains)
+            labels=labels.to(train_iter.device)
             # print(str(i)+"-------"+str(len(train_iter))+"------" +str(trains)+"!"+str(labels))
             # print(trains.shape)
             print(str(i) + "-------" + str(len(train_iter)) )
@@ -182,6 +189,12 @@ def evaluate(config, model, data_iter, test=False):
     labels_all = np.array([], dtype=int)
     with torch.no_grad():
         for texts, labels in data_iter:
+            texts=list(texts)
+            texts[0] = texts[0].to(data_iter.device)
+            texts[1] = texts[1].to(data_iter.device)
+            texts[2] = texts[2].to(data_iter.device)
+            texts=tuple(texts)
+            labels=labels.to(data_iter.device)
             # 模型输出
             outputs = model(texts)
             loss = F.cross_entropy(outputs, labels)
