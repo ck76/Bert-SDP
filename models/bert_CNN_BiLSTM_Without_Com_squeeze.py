@@ -43,7 +43,7 @@ class Config(object):
         self.batch_size = 128  # mini-batch大小 todo 太大的话可能会导致我的电脑内存泄漏
         self.pad_size = 512  # 每句话处理成的长度(短填长切)
         # 从自己和其他人一般的经验来看，学习率可以设置为3、1、0.5、0.1、0.05、0.01、0.005，0.005、0.0001、0.00001具体需结合实际情况对比判断，小的学习率收敛慢，但能将loss值降到更低。
-        self.learning_rate = 0.00001  # 学习率 todo 试着调高试
+        self.learning_rate = 0.001  # 学习率 todo 试着调高试
         self.bert_path = 'JavaBERT'
         # self.tokenizer =  AutoTokenizer.from_pretrained("CAUKiel/JavaBERT")
         self.tokenizer = BertTokenizer.from_pretrained(self.bert_path)

@@ -5,9 +5,9 @@ import torch.nn.functional as F
 from pytorch_pretrained import BertModel, BertTokenizer
 import pandas as pd
 import numpy as np
-import hiddenlayer as h
-from torchviz import make_dot
-from tensorboardX import SummaryWriter
+# import hiddenlayer as h
+# from torchviz import make_dot
+# from tensorboardX import SummaryWriter
 
 
 def pre_process_data(path):
@@ -34,7 +34,7 @@ class Config(object):
         self.require_improvement = 1000                                 # 若超过1000batch效果还没提升，则提前结束训练
         self.num_classes = 2                        # 类别数
         self.num_epochs = 1                                             # epoch数
-        self.batch_size = 128                                           # mini-batch大小
+        self.batch_size = 64                                           # mini-batch大小
         self.pad_size = 512                                              # 每句话处理成的长度(短填长切)
         self.learning_rate = 5e-5                                       # 学习率
         self.bert_path = 'JavaBERT'
