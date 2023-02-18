@@ -6,8 +6,6 @@ torch.transpose
 torch.transpose：转置经常在矩阵中使用，交换两个维度。
 torch.transpose(tensor,dim_0,dim_1)
 
-permute是什么
-交换
 
 .squeeze(2)
 .unsqueeze(0)
