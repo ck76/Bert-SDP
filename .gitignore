@@ -1,3 +1,7 @@
 /bert_pretrain/
 /PROMISE/saved_dict/
 /JavaBERT/
+.idea/*
+.idea/misc.xml
+.idea/misc.xml
+.idea/Bert-SDP.iml

@@ -7,7 +7,7 @@ from sklearn import metrics
 import time
 from utils import get_time_dif
 from pytorch_pretrained.optimization import BertAdam
-from torchsummary import summary
+# from torchsummary import summary
 
 # 权重初始化，默认xavier
 # def init_network(model, method='xavier', exclude='embedding', seed=123):
