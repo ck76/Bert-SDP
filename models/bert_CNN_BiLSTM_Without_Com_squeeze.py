@@ -39,20 +39,29 @@ class Config(object):
         self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')  # 设备
         self.require_improvement = 1000  # 若超过1000batch效果还没提升，则提前结束训练
         self.num_classes = 3 # 类别数
+        # todo 超参数
         self.num_epochs = 2  # epoch数  todo 随时更改1，2,3,4,5
+        # todo 超参数
         self.batch_size = 64  # mini-batch大小 todo 太大的话可能会导致我的电脑内存泄漏
         self.pad_size = 512  # 每句话处理成的长度(短填长切)
         # 从自己和其他人一般的经验来看，学习率可以设置为3、1、0.5、0.1、0.05、0.01、0.005，0.005、0.0001、0.00001具体需结合实际情况对比判断，小的学习率收敛慢，但能将loss值降到更低。
+        # todo 超参数
         self.learning_rate = 0.001  # 学习率 todo 试着调高试
         self.bert_path = 'JavaBERT'
         # self.tokenizer =  AutoTokenizer.from_pretrained("CAUKiel/JavaBERT")
         self.tokenizer = BertTokenizer.from_pretrained(self.bert_path)
+        # todo 超参数
         self.hidden_size = 768  #todo 改成Embedding size
+        # todo 超参数
         self.filter_size = 5
         # self.filter_sizes = (self.filter_size, self.filter_size, self.filter_size,self.filter_size,self.filter_size)  # 卷积核尺寸
+        # todo 超参数
         self.filter_sizes = (self.filter_size, self.filter_size)  # 卷积核尺寸
+        # todo 超参数
         self.num_filters = 512  # 卷积核数量(channels数)  #todo 代表卷积出来的厚度，512是不是太厚了啊
+        # todo 超参数
         self.dropout = 0.01
+        # todo 超参数
         self.rnn_hidden = 64
         self.num_layers = 2
         self.lstm_input_size=self.hidden_size-self.filter_size+1  #768-5+1
