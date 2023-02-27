@@ -1,0 +1,662 @@
+"C:\Users\Takada Lab\Documents\GitHub\Bert-SDP\venv\Scripts\python.exe" "C:\Users\Takada Lab\Documents\GitHub\Bert-SDP\run.py"
+bert_CNN_BiLSTM_Without_Com_squeeze
+0it [00:00, ?it/s]Loading data...
+238it [00:01, 170.20it/s]
+100it [00:00, 184.33it/s]
+202it [00:01, 115.15it/s]
+Time usage: 0:00:04
+Model(
+  (bert): BertModel(
+    (embeddings): BertEmbeddings(
+      (word_embeddings): Embedding(30522, 768, padding_idx=0)
+      (position_embeddings): Embedding(512, 768)
+      (token_type_embeddings): Embedding(2, 768)
+      (LayerNorm): BertLayerNorm()
+      (dropout): Dropout(p=0.1, inplace=False)
+    )
+    (encoder): BertEncoder(
+      (layer): ModuleList(
+        (0): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): BertLayerNorm()
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): BertLayerNorm()
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (1): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): BertLayerNorm()
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): BertLayerNorm()
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (2): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): BertLayerNorm()
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): BertLayerNorm()
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (3): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): BertLayerNorm()
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): BertLayerNorm()
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (4): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): BertLayerNorm()
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): BertLayerNorm()
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (5): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): BertLayerNorm()
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): BertLayerNorm()
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (6): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): BertLayerNorm()
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): BertLayerNorm()
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (7): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): BertLayerNorm()
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): BertLayerNorm()
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (8): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): BertLayerNorm()
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): BertLayerNorm()
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (9): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): BertLayerNorm()
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): BertLayerNorm()
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (10): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): BertLayerNorm()
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): BertLayerNorm()
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (11): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): BertLayerNorm()
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): BertLayerNorm()
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+      )
+    )
+    (pooler): BertPooler(
+      (dense): Linear(in_features=768, out_features=768, bias=True)
+      (activation): Tanh()
+    )
+  )
+  (conv1): Conv2d(1, 1, kernel_size=(5, 5), stride=(1, 1))
+  (lstm): LSTM(764, 64, num_layers=2, batch_first=True, dropout=0.01, bidirectional=True)
+  (convs): ModuleList(
+    (0): Conv2d(1, 512, kernel_size=(5, 768), stride=(1, 1))
+    (1): Conv2d(1, 512, kernel_size=(5, 768), stride=(1, 1))
+  )
+  (dropout): Dropout(p=0.01, inplace=False)
+  (fc_cnn): Linear(in_features=128, out_features=2, bias=True)
+  (maxpool): MaxPool1d(kernel_size=508, stride=508, padding=0, dilation=1, ceil_mode=False)
+)
+Epoch [1/2]
+0-------4
+hhhhh
+(tensor([[ 101, 7305, 8916,  ...,    0,    0,    0],
+        [ 101, 7305, 8916,  ...,    0,    0,    0],
+        [ 101, 7305, 8916,  ...,    0,    0,    0],
+        ...,
+        [ 101, 7305, 8916,  ..., 4844, 6622, 3554],
+        [ 101, 7305, 8916,  ...,    0,    0,    0],
+        [ 101, 7305, 8916,  ...,    0,    0,    0]], device='cuda:0'), tensor([407, 477, 446, 467, 406, 512, 325, 512, 207, 303, 512, 512, 247, 512,
+         73, 107, 512, 512, 140, 512, 107, 512, 512, 512, 512, 171, 156,  43,
+         96, 512,  63,  87, 172, 512, 372, 512, 512, 104,  60, 512, 137, 438,
+        512, 512, 246, 512, 177, 291, 512, 512, 512, 108,  43, 512, 134, 512,
+        331, 368, 165, 284, 269, 512, 178,  29], device='cuda:0'), tensor([[1, 1, 1,  ..., 0, 0, 0],
+        [1, 1, 1,  ..., 0, 0, 0],
+        [1, 1, 1,  ..., 0, 0, 0],
+        ...,
+        [1, 1, 1,  ..., 1, 1, 1],
+        [1, 1, 1,  ..., 0, 0, 0],
+        [1, 1, 1,  ..., 0, 0, 0]], device='cuda:0'))
+hhhhh-0:torch.Size([64, 512])
+tensor([[ 101, 7305, 8916,  ...,    0,    0,    0],
+        [ 101, 7305, 8916,  ...,    0,    0,    0],
+        [ 101, 7305, 8916,  ...,    0,    0,    0],
+        ...,
+        [ 101, 7305, 8916,  ..., 4844, 6622, 3554],
+        [ 101, 7305, 8916,  ...,    0,    0,    0],
+        [ 101, 7305, 8916,  ...,    0,    0,    0]], device='cuda:0')
+hhhhh-1:torch.Size([64])
+tensor([407, 477, 446, 467, 406, 512, 325, 512, 207, 303, 512, 512, 247, 512,
+         73, 107, 512, 512, 140, 512, 107, 512, 512, 512, 512, 171, 156,  43,
+         96, 512,  63,  87, 172, 512, 372, 512, 512, 104,  60, 512, 137, 438,
+        512, 512, 246, 512, 177, 291, 512, 512, 512, 108,  43, 512, 134, 512,
+        331, 368, 165, 284, 269, 512, 178,  29], device='cuda:0')
+hhhhh-2:torch.Size([64, 512])
+tensor([[1, 1, 1,  ..., 0, 0, 0],
+        [1, 1, 1,  ..., 0, 0, 0],
+        [1, 1, 1,  ..., 0, 0, 0],
+        ...,
+        [1, 1, 1,  ..., 1, 1, 1],
+        [1, 1, 1,  ..., 0, 0, 0],
+        [1, 1, 1,  ..., 0, 0, 0]], device='cuda:0')
+hhhhh-labels:torch.Size([64])
+tensor([0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1,
+        0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1,
+        0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1], device='cuda:0')
+torch.Size([64, 512, 768])
+torch.Size([64, 1, 512, 768])
+torch.Size([64, 1, 508, 764])
+torch.Size([64, 508, 764])
+torch.Size([64, 508, 128])
+torch.Size([64, 128, 508])
+torch.Size([64, 128, 1])
+torch.Size([64, 128])
+C:\Users\Takada Lab\Documents\GitHub\Bert-SDP\pytorch_pretrained\optimization.py:275: UserWarning: This overload of add_ is deprecated:
+	add_(Number alpha, Tensor other)
+Consider using one of the following signatures instead:
+	add_(Tensor other, *, Number alpha) (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\builder\windows\pytorch\torch\csrc\utils\python_arg_parser.cpp:1420.)
+  next_m.mul_(beta1).add_(1 - beta1, grad)
+训练集：
+tensor([0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1,
+        0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1,
+        0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1])
+tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+torch.Size([64, 512, 768])
+torch.Size([64, 1, 512, 768])
+torch.Size([64, 1, 508, 764])
+torch.Size([64, 508, 764])
+torch.Size([64, 508, 128])
+torch.Size([64, 128, 508])
+torch.Size([64, 128, 1])
+torch.Size([64, 128])
+验证集：
+[0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+ 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1]
+[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+Iter:      0,  Train Loss:   0.7,  Train Acc: 50.00%,  Val Loss:   0.7,  Val Acc: 50.00%,  Time: 0:00:04 *
+1-------4
+torch.Size([64, 512, 768])
+torch.Size([64, 1, 512, 768])
+torch.Size([64, 1, 508, 764])
+torch.Size([64, 508, 764])
+torch.Size([64, 508, 128])
+torch.Size([64, 128, 508])
+torch.Size([64, 128, 1])
+torch.Size([64, 128])
+训练集：
+tensor([0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1,
+        0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1,
+        0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1])
+tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+torch.Size([64, 512, 768])
+torch.Size([64, 1, 512, 768])
+torch.Size([64, 1, 508, 764])
+torch.Size([64, 508, 764])
+torch.Size([64, 508, 128])
+torch.Size([64, 128, 508])
+torch.Size([64, 128, 1])
+torch.Size([64, 128])
+验证集：
+[0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+ 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1]
+[1 1 1 1 0 1 0 1 1 1 1 1 0 1 1 1 0 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1
+ 1 0 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1]
+Iter:      1,  Train Loss:   0.7,  Train Acc: 50.00%,  Val Loss:  0.67,  Val Acc: 64.06%,  Time: 0:00:08 *
+2-------4
+torch.Size([64, 512, 768])
+torch.Size([64, 1, 512, 768])
+torch.Size([64, 1, 508, 764])
+torch.Size([64, 508, 764])
+torch.Size([64, 508, 128])
+torch.Size([64, 128, 508])
+torch.Size([64, 128, 1])
+torch.Size([64, 128])
+训练集：
+tensor([0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1,
+        0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1,
+        0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1])
+tensor([1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1])
+torch.Size([64, 512, 768])
+torch.Size([64, 1, 512, 768])
+torch.Size([64, 1, 508, 764])
+torch.Size([64, 508, 764])
+torch.Size([64, 508, 128])
+torch.Size([64, 128, 508])
+torch.Size([64, 128, 1])
+torch.Size([64, 128])
+验证集：
+[0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+ 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1]
+[1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+ 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1]
+Iter:      2,  Train Loss:  0.69,  Train Acc: 50.00%,  Val Loss:  0.67,  Val Acc: 50.00%,  Time: 0:00:11
+3-------4
+torch.Size([46, 512, 768])
+torch.Size([46, 1, 512, 768])
+torch.Size([46, 1, 508, 764])
+torch.Size([46, 508, 764])
+torch.Size([46, 508, 128])
+torch.Size([46, 128, 508])
+torch.Size([46, 128, 1])
+torch.Size([46, 128])
+训练集：
+tensor([0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1,
+        0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1])
+tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1])
+torch.Size([64, 512, 768])
+torch.Size([64, 1, 512, 768])
+torch.Size([64, 1, 508, 764])
+torch.Size([64, 508, 764])
+torch.Size([64, 508, 128])
+torch.Size([64, 128, 508])
+torch.Size([64, 128, 1])
+torch.Size([64, 128])
+验证集：
+[0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+ 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1]
+[1 1 0 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1
+ 1 0 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1]
+Iter:      3,  Train Loss:  0.69,  Train Acc: 50.00%,  Val Loss:  0.67,  Val Acc: 57.81%,  Time: 0:00:14 *
+Epoch [2/2]
+0-------4
+torch.Size([64, 512, 768])
+torch.Size([64, 1, 512, 768])
+torch.Size([64, 1, 508, 764])
+torch.Size([64, 508, 764])
+torch.Size([64, 508, 128])
+torch.Size([64, 128, 508])
+torch.Size([64, 128, 1])
+torch.Size([64, 128])
+训练集：
+tensor([0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1,
+        0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1,
+        0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1])
+tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1])
+torch.Size([64, 512, 768])
+torch.Size([64, 1, 512, 768])
+torch.Size([64, 1, 508, 764])
+torch.Size([64, 508, 764])
+torch.Size([64, 508, 128])
+torch.Size([64, 128, 508])
+torch.Size([64, 128, 1])
+torch.Size([64, 128])
+验证集：
+[0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+ 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1]
+[1 1 0 1 0 1 0 1 0 1 0 0 0 1 1 1 0 0 0 0 1 1 1 1 0 1 1 0 1 1 0 1 1 1 0 1 1
+ 1 0 1 0 1 0 1 1 1 1 1 1 1 0 1 0 1 1 1 1 1 0 1 0 1 1 1]
+Iter:      4,  Train Loss:  0.67,  Train Acc: 51.56%,  Val Loss:  0.65,  Val Acc: 71.88%,  Time: 0:00:17 *
+1-------4
+torch.Size([64, 512, 768])
+torch.Size([64, 1, 512, 768])
+torch.Size([64, 1, 508, 764])
+torch.Size([64, 508, 764])
+torch.Size([64, 508, 128])
+torch.Size([64, 128, 508])
+torch.Size([64, 128, 1])
+torch.Size([64, 128])
+训练集：
+tensor([0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1,
+        0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1,
+        0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1])
+tensor([0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1,
+        1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1,
+        0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0])
+torch.Size([64, 512, 768])
+torch.Size([64, 1, 512, 768])
+torch.Size([64, 1, 508, 764])
+torch.Size([64, 508, 764])
+torch.Size([64, 508, 128])
+torch.Size([64, 128, 508])
+torch.Size([64, 128, 1])
+torch.Size([64, 128])
+验证集：
+[0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+ 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1]
+[1 1 0 1 0 1 0 1 0 1 0 0 0 1 0 1 0 0 0 0 1 0 1 1 0 0 0 0 1 0 0 1 0 1 0 1 0
+ 1 0 1 0 1 0 0 0 1 1 1 0 1 0 1 0 1 1 1 1 1 0 1 0 1 0 1]
+Iter:      5,  Train Loss:  0.63,  Train Acc: 79.69%,  Val Loss:  0.63,  Val Acc: 76.56%,  Time: 0:00:21 *
+2-------4
+torch.Size([64, 512, 768])
+torch.Size([64, 1, 512, 768])
+torch.Size([64, 1, 508, 764])
+torch.Size([64, 508, 764])
+torch.Size([64, 508, 128])
+torch.Size([64, 128, 508])
+torch.Size([64, 128, 1])
+torch.Size([64, 128])
+训练集：
+tensor([0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1,
+        0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1,
+        0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1])
+tensor([0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0,
+        0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1,
+        1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1])
+torch.Size([64, 512, 768])
+torch.Size([64, 1, 512, 768])
+torch.Size([64, 1, 508, 764])
+torch.Size([64, 508, 764])
+torch.Size([64, 508, 128])
+torch.Size([64, 128, 508])
+torch.Size([64, 128, 1])
+torch.Size([64, 128])
+验证集：
+[0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+ 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1]
+[1 1 0 1 0 1 0 1 0 1 0 0 0 1 0 1 0 0 0 0 1 0 1 1 0 0 0 0 1 0 0 1 0 1 0 1 0
+ 1 0 1 0 1 0 0 0 1 1 1 0 1 0 1 0 1 1 0 1 1 0 1 0 1 0 1]
+Iter:      6,  Train Loss:  0.66,  Train Acc: 64.06%,  Val Loss:  0.62,  Val Acc: 75.00%,  Time: 0:00:25 *
+3-------4
+torch.Size([46, 512, 768])
+torch.Size([46, 1, 512, 768])
+torch.Size([46, 1, 508, 764])
+torch.Size([46, 508, 764])
+torch.Size([46, 508, 128])
+torch.Size([46, 128, 508])
+torch.Size([46, 128, 1])
+torch.Size([46, 128])
+训练集：
+tensor([0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1,
+        0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1])
+tensor([0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0,
+        0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1])
+torch.Size([64, 512, 768])
+torch.Size([64, 1, 512, 768])
+torch.Size([64, 1, 508, 764])
+torch.Size([64, 508, 764])
+torch.Size([64, 508, 128])
+torch.Size([64, 128, 508])
+torch.Size([64, 128, 1])
+torch.Size([64, 128])
+验证集：
+[0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+ 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1]
+[1 1 0 1 0 1 0 1 0 1 0 0 0 1 0 1 0 0 0 0 1 0 1 1 0 0 0 0 1 0 0 1 0 1 0 1 0
+ 1 0 1 0 1 0 0 0 1 1 1 0 1 0 1 0 1 1 0 1 1 0 1 0 1 0 1]
+Iter:      7,  Train Loss:  0.66,  Train Acc: 71.74%,  Val Loss:  0.62,  Val Acc: 75.00%,  Time: 0:00:28 *
+torch.Size([64, 512, 768])
+torch.Size([64, 1, 512, 768])
+torch.Size([64, 1, 508, 764])
+torch.Size([64, 508, 764])
+torch.Size([64, 508, 128])
+torch.Size([64, 128, 508])
+torch.Size([64, 128, 1])
+torch.Size([64, 128])
+torch.Size([64, 512, 768])
+torch.Size([64, 1, 512, 768])
+torch.Size([64, 1, 508, 764])
+torch.Size([64, 508, 764])
+torch.Size([64, 508, 128])
+torch.Size([64, 128, 508])
+torch.Size([64, 128, 1])
+torch.Size([64, 128])
+torch.Size([64, 512, 768])
+torch.Size([64, 1, 512, 768])
+torch.Size([64, 1, 508, 764])
+torch.Size([64, 508, 764])
+torch.Size([64, 508, 128])
+torch.Size([64, 128, 508])
+torch.Size([64, 128, 1])
+torch.Size([64, 128])
+torch.Size([10, 512, 768])
+torch.Size([10, 1, 512, 768])
+torch.Size([10, 1, 508, 764])
+torch.Size([10, 508, 764])
+torch.Size([10, 508, 128])
+torch.Size([10, 128, 508])
+torch.Size([10, 128, 1])
+torch.Size([10, 128])
+验证集：
+[0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+ 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1
+ 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+ 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1
+ 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+ 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1]
+[0 1 1 1 1 1 1 0 1 1 0 1 1 1 0 1 1 1 0 0 0 1 1 0 0 1 1 0 1 0 0 1 0 1 0 1 0
+ 1 0 1 0 1 1 1 1 0 0 1 0 1 1 1 1 1 1 1 0 0 0 1 0 1 0 0 1 0 1 0 0 1 0 0 1 0
+ 0 0 1 1 0 1 1 1 0 1 1 1 0 1 0 0 1 1 0 1 0 1 1 1 0 1 1 0 0 1 0 1 0 1 1 1 1
+ 1 0 1 0 1 0 0 0 1 0 0 0 0 0 1 0 1 0 0 1 1 0 0 1 1 0 0 0 1 0 0 0 1 0 1 0 1
+ 0 0 0 0 0 0 0 0 1 1 0 1 0 1 0 0 1 1 0 1 0 1 0 1 0 1 0 0 1 1 0 0 1 1 0 0 1
+ 0 0 1 0 1 0 1 1 1 0 1 1 1 1 1 0 0]
+Test Loss:  0.65,  Test Acc: 66.83%
+Precision, Recall and F1-Score...
+              precision    recall  f1-score   support
+
+       clean     0.6735    0.6535    0.6633       101
+       buggy     0.6635    0.6832    0.6732       101
+
+    accuracy                         0.6683       202
+   macro avg     0.6685    0.6683    0.6682       202
+weighted avg     0.6685    0.6683    0.6682       202
+
+Confusion Matrix...
+[[66 35]
+ [32 69]]
+Time usage: 0:00:04
+[W CUDAGuardImpl.h:46] Warning: CUDA warning: driver shutting down (function uncheckedGetDevice)
+[W CUDAGuardImpl.h:62] Warning: CUDA warning: driver shutting down (function uncheckedSetDevice)
+
+Process finished with exit code 0
