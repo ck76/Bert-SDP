@@ -1,4 +1,9 @@
 https://zhuanlan.zhihu.com/p/27905191
+https://zhuanlan.zhihu.com/p/45353509
+https://avoid.overfit.cn/post/fda8764b85174b6ca3c9eac4fc6d0db9
+https://blog.csdn.net/deephub/article/details/128981308
+    Optuna
+https://blog.csdn.net/ARPOSPF/article/details/128413563
 
 超参数调整
 在深度神经网络中，调整超参数组合并非易事，因为训练深层神经网络十分耗时，且需要配置多个参数。
@@ -61,4 +66,7 @@ Dropout方法
 可视化有两种直接方式，分别是可视化激活程度和可视化相关权重。在网络训练过程中，卷积层的激活情况通常会变得更为稀疏和具有局部特性。当不同输入图像的激活图都存在大片未激活的区域，那么可能是设置了过高的学习率使得卷积核不起作用，导致产生零激活图像。
 
 性能优良的神经网络通常含有多个明显而平滑的卷积器，且没有任何干扰特征。若在权重中观察到相关干扰特征，可能原因是网络未被充分训练，或是正则化强度较低导致了过拟合效应。
+
+
+
 
