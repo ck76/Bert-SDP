@@ -19,8 +19,8 @@ if __name__ == '__main__':
     # todo 从这里控制模型的选择
     # model_name = args.model  #
     # model_name = "bert_CNN_BiLSTM_Without_Com"
-    # model_name = "bert_CNN_BiLSTM_Without_Com_squeeze"
-    model_name = "bert_CNN"
+    model_name = "bert_CNN_BiLSTM_Without_Com_squeeze"
+    # model_name = "bert_CNN"
     # model_name = "bert_CNN_10_filters"
     # model_name = "bert_CNN_SDP"
     # model_name = "bert_RNN"

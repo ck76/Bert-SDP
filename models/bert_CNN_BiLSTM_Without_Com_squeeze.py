@@ -28,7 +28,7 @@ def pre_process_data(path):
 class Config(object):
     """配置参数"""
 
-    def __init__(self, dataset="PROMISE", project_name="poi"):
+    def __init__(self, dataset="PROMISE", project_name="synapse"):
         self.model_name = 'bert_cnn_bilstm_without_com'
         self.train_path = dataset + '/data/' + project_name + '/train.txt'  # 训练集
         self.dev_path = dataset + '/data/' + project_name + '/dev.txt'  # 验证集
