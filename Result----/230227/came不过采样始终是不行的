@@ -1,0 +1,2055 @@
+"C:\Users\Takada Lab\Documents\GitHub\Bert-SDP\venv\Scripts\python.exe" "C:\Users\Takada Lab\Documents\GitHub\Bert-SDP\run.py"
+bert_CNN_BiLSTM_Without_Com_squeeze
+Loading data...
+935it [00:04, 220.22it/s]
+595it [00:02, 254.19it/s]
+848it [00:03, 251.26it/s]
+Time usage: 0:00:10
+Model(
+  (bert): BertModel(
+    (embeddings): BertEmbeddings(
+      (word_embeddings): Embedding(30522, 768, padding_idx=0)
+      (position_embeddings): Embedding(512, 768)
+      (token_type_embeddings): Embedding(2, 768)
+      (LayerNorm): BertLayerNorm()
+      (dropout): Dropout(p=0.1, inplace=False)
+    )
+    (encoder): BertEncoder(
+      (layer): ModuleList(
+        (0): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): BertLayerNorm()
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): BertLayerNorm()
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (1): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): BertLayerNorm()
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): BertLayerNorm()
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (2): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): BertLayerNorm()
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): BertLayerNorm()
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (3): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): BertLayerNorm()
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): BertLayerNorm()
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (4): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): BertLayerNorm()
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): BertLayerNorm()
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (5): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): BertLayerNorm()
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): BertLayerNorm()
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (6): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): BertLayerNorm()
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): BertLayerNorm()
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (7): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): BertLayerNorm()
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): BertLayerNorm()
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (8): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): BertLayerNorm()
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): BertLayerNorm()
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (9): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): BertLayerNorm()
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): BertLayerNorm()
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (10): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): BertLayerNorm()
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): BertLayerNorm()
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (11): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): BertLayerNorm()
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): BertLayerNorm()
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+      )
+    )
+    (pooler): BertPooler(
+      (dense): Linear(in_features=768, out_features=768, bias=True)
+      (activation): Tanh()
+    )
+  )
+  (conv1): Conv2d(1, 1, kernel_size=(5, 5), stride=(1, 1))
+  (lstm): LSTM(764, 64, num_layers=2, batch_first=True, dropout=0.01, bidirectional=True)
+  (convs): ModuleList(
+    (0): Conv2d(1, 512, kernel_size=(5, 768), stride=(1, 1))
+    (1): Conv2d(1, 512, kernel_size=(5, 768), stride=(1, 1))
+  )
+  (dropout): Dropout(p=0.01, inplace=False)
+  (fc_cnn): Linear(in_features=128, out_features=2, bias=True)
+  (maxpool): MaxPool1d(kernel_size=508, stride=508, padding=0, dilation=1, ceil_mode=False)
+)
+Epoch [1/2]
+0-------8
+hhhhh
+(tensor([[  101,  7305,  8916,  ...,     0,     0,     0],
+        [  101,  7305,  8916,  ...,     0,     0,     0],
+        [  101,  7305,  8916,  ...,   114,   196,  1142],
+        ...,
+        [  101,  7305,  8916,  ...,     0,     0,     0],
+        [  101,  7305,  8916,  ..., 12182, 14538,  1383],
+        [  101,  7305,  8916,  ...,     0,     0,     0]], device='cuda:0'), tensor([327, 117, 512, 512, 512,  99, 166, 398, 104, 279, 512, 512, 512, 512,
+        512, 480, 512, 512, 434,  92, 510, 512, 114, 186, 512, 512, 277, 250,
+        103, 351, 512, 512, 512, 207, 512, 144, 153, 312, 512, 512, 169, 308,
+         36, 199, 512, 106, 322, 512, 121, 369, 293, 481, 242, 512, 512, 433,
+        397, 116, 512,  71, 183, 378, 107,  53, 512, 170, 110,  56, 275, 111,
+         74, 188, 512, 180,  59, 512, 512, 232, 455, 512, 121, 512, 354, 512,
+        289,  53, 512, 115, 512, 512,  90, 512, 260, 512, 512, 297, 379, 509,
+        433, 326, 281, 195, 512, 219, 512, 347,  81, 512, 512, 195, 512, 233,
+        287, 424, 138, 153, 512, 159, 472, 417,  64, 256,  89, 102, 362, 266,
+        512, 151], device='cuda:0'), tensor([[1, 1, 1,  ..., 0, 0, 0],
+        [1, 1, 1,  ..., 0, 0, 0],
+        [1, 1, 1,  ..., 1, 1, 1],
+        ...,
+        [1, 1, 1,  ..., 0, 0, 0],
+        [1, 1, 1,  ..., 1, 1, 1],
+        [1, 1, 1,  ..., 0, 0, 0]], device='cuda:0'))
+hhhhh-0:torch.Size([128, 512])
+tensor([[  101,  7305,  8916,  ...,     0,     0,     0],
+        [  101,  7305,  8916,  ...,     0,     0,     0],
+        [  101,  7305,  8916,  ...,   114,   196,  1142],
+        ...,
+        [  101,  7305,  8916,  ...,     0,     0,     0],
+        [  101,  7305,  8916,  ..., 12182, 14538,  1383],
+        [  101,  7305,  8916,  ...,     0,     0,     0]], device='cuda:0')
+hhhhh-1:torch.Size([128])
+tensor([327, 117, 512, 512, 512,  99, 166, 398, 104, 279, 512, 512, 512, 512,
+        512, 480, 512, 512, 434,  92, 510, 512, 114, 186, 512, 512, 277, 250,
+        103, 351, 512, 512, 512, 207, 512, 144, 153, 312, 512, 512, 169, 308,
+         36, 199, 512, 106, 322, 512, 121, 369, 293, 481, 242, 512, 512, 433,
+        397, 116, 512,  71, 183, 378, 107,  53, 512, 170, 110,  56, 275, 111,
+         74, 188, 512, 180,  59, 512, 512, 232, 455, 512, 121, 512, 354, 512,
+        289,  53, 512, 115, 512, 512,  90, 512, 260, 512, 512, 297, 379, 509,
+        433, 326, 281, 195, 512, 219, 512, 347,  81, 512, 512, 195, 512, 233,
+        287, 424, 138, 153, 512, 159, 472, 417,  64, 256,  89, 102, 362, 266,
+        512, 151], device='cuda:0')
+hhhhh-2:torch.Size([128, 512])
+tensor([[1, 1, 1,  ..., 0, 0, 0],
+        [1, 1, 1,  ..., 0, 0, 0],
+        [1, 1, 1,  ..., 1, 1, 1],
+        ...,
+        [1, 1, 1,  ..., 0, 0, 0],
+        [1, 1, 1,  ..., 1, 1, 1],
+        [1, 1, 1,  ..., 0, 0, 0]], device='cuda:0')
+hhhhh-labels:torch.Size([128])
+tensor([0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0,
+        0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0,
+        0, 1, 0, 0, 0, 0, 1, 0], device='cuda:0')
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+C:\Users\Takada Lab\Documents\GitHub\Bert-SDP\pytorch_pretrained\optimization.py:275: UserWarning: This overload of add_ is deprecated:
+	add_(Number alpha, Tensor other)
+Consider using one of the following signatures instead:
+	add_(Tensor other, *, Number alpha) (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\builder\windows\pytorch\torch\csrc\utils\python_arg_parser.cpp:1420.)
+  next_m.mul_(beta1).add_(1 - beta1, grad)
+训练集：
+tensor([0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0,
+        0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0,
+        0, 1, 0, 0, 0, 0, 1, 0])
+tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0])
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+torch.Size([83, 512, 768])
+torch.Size([83, 1, 512, 768])
+torch.Size([83, 1, 508, 764])
+torch.Size([83, 508, 764])
+torch.Size([83, 508, 128])
+torch.Size([83, 128, 508])
+torch.Size([83, 128, 1])
+torch.Size([83, 128])
+验证集：
+[0 1 0 0 1 0 0 1 0 0 1 1 0 1 1 1 1 0 1 1 0 1 0 0 0 1 0 0 1 1 0 0 0 1 1 0 1
+ 0 1 0 1 0 0 0 0 0 0 1 0 1 1 0 1 0 1 0 1 0 1 0 0 1 0 1 1 0 0 0 1 0 0 0 0 0
+ 0 0 0 1 0 1 0 0 0 0 0 1 1 1 1 1 0 0 0 0 0 1 1 0 0 0 1 1 0 0 0 0 0 1 1 1 1
+ 0 0 0 0 1 1 0 1 0 1 0 0 0 0 0 0 1 1 1 1 0 0 0 0 1 1 0 0 0 0 1 0 0 1 0 0 1
+ 0 0 1 0 1 0 0 0 0 1 1 1 0 0 0 0 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1
+ 1 0 0 1 0 0 0 0 0 0 0 0 1 1 1 0 0 1 0 1 1 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0
+ 0 0 1 0 1 1 1 0 0 0 0 1 0 1 1 0 1 1 0 0 0 0 1 0 1 1 0 0 0 0 0 0 1 0 0 1 0
+ 0 0 1 0 0 0 0 0 0 1 1 1 0 0 0 1 0 1 1 1 1 0 1 1 0 1 1 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 1 1 1 0 0 1 1 0 0 1 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 1 0 1 1 0 0
+ 0 1 0 1 0 0 1 1 0 1 1 1 1 1 0 1 1 0 1 0 0 0 0 0 0 1 1 0 1 0 1 1 0 0 0 0 0
+ 1 1 0 1 1 0 1 0 1 1 0 0 0 0 0 1 1 1 1 1 0 1 0 0 0 0 0 1 0 0 0 0 1 0 0 1 0
+ 0 0 0 1 0 0 0 0 1 0 0 1 0 1 0 0 0 1 0 1 0 0 1 0 1 0 1 1 1 0 0 0 1 0 0 1 0
+ 0 1 0 1 1 0 1 0 1 0 0 0 0 1 1 0 0 1 0 1 0 1 0 0 1 0 1 1 1 0 1 0 0 0 0 1 0
+ 1 0 0 0 0 0 1 0 1 1 0 0 1 0 0 0 0 0 0 1 0 0 1 1 0 0 0 1 0 1 0 1 0 1 1 0 0
+ 1 0 0 0 0 0 0 0 1 1 0 0 0 1 0 0 1 1 1 0 1 0 0 0 1 0 0 0 1 1 0 0 0 1 0 0 1
+ 1 0 0 0 0 1 0 0 0 1 0 0 1 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0
+ 0 0 1]
+[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0]
+Iter:      0,  Train Loss:  0.62,  Train Acc: 79.69%,  Val Loss:  0.66,  Val Acc: 63.70%,  Time: 0:00:16 *
+1-------8
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+训练集：
+tensor([1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1,
+        1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1,
+        0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0,
+        1, 0, 0, 0, 0, 1, 0, 1])
+tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0])
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+torch.Size([83, 512, 768])
+torch.Size([83, 1, 512, 768])
+torch.Size([83, 1, 508, 764])
+torch.Size([83, 508, 764])
+torch.Size([83, 508, 128])
+torch.Size([83, 128, 508])
+torch.Size([83, 128, 1])
+torch.Size([83, 128])
+验证集：
+[0 1 0 0 1 0 0 1 0 0 1 1 0 1 1 1 1 0 1 1 0 1 0 0 0 1 0 0 1 1 0 0 0 1 1 0 1
+ 0 1 0 1 0 0 0 0 0 0 1 0 1 1 0 1 0 1 0 1 0 1 0 0 1 0 1 1 0 0 0 1 0 0 0 0 0
+ 0 0 0 1 0 1 0 0 0 0 0 1 1 1 1 1 0 0 0 0 0 1 1 0 0 0 1 1 0 0 0 0 0 1 1 1 1
+ 0 0 0 0 1 1 0 1 0 1 0 0 0 0 0 0 1 1 1 1 0 0 0 0 1 1 0 0 0 0 1 0 0 1 0 0 1
+ 0 0 1 0 1 0 0 0 0 1 1 1 0 0 0 0 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1
+ 1 0 0 1 0 0 0 0 0 0 0 0 1 1 1 0 0 1 0 1 1 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0
+ 0 0 1 0 1 1 1 0 0 0 0 1 0 1 1 0 1 1 0 0 0 0 1 0 1 1 0 0 0 0 0 0 1 0 0 1 0
+ 0 0 1 0 0 0 0 0 0 1 1 1 0 0 0 1 0 1 1 1 1 0 1 1 0 1 1 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 1 1 1 0 0 1 1 0 0 1 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 1 0 1 1 0 0
+ 0 1 0 1 0 0 1 1 0 1 1 1 1 1 0 1 1 0 1 0 0 0 0 0 0 1 1 0 1 0 1 1 0 0 0 0 0
+ 1 1 0 1 1 0 1 0 1 1 0 0 0 0 0 1 1 1 1 1 0 1 0 0 0 0 0 1 0 0 0 0 1 0 0 1 0
+ 0 0 0 1 0 0 0 0 1 0 0 1 0 1 0 0 0 1 0 1 0 0 1 0 1 0 1 1 1 0 0 0 1 0 0 1 0
+ 0 1 0 1 1 0 1 0 1 0 0 0 0 1 1 0 0 1 0 1 0 1 0 0 1 0 1 1 1 0 1 0 0 0 0 1 0
+ 1 0 0 0 0 0 1 0 1 1 0 0 1 0 0 0 0 0 0 1 0 0 1 1 0 0 0 1 0 1 0 1 0 1 1 0 0
+ 1 0 0 0 0 0 0 0 1 1 0 0 0 1 0 0 1 1 1 0 1 0 0 0 1 0 0 0 1 1 0 0 0 1 0 0 1
+ 1 0 0 0 0 1 0 0 0 1 0 0 1 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0
+ 0 0 1]
+[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0]
+Iter:      1,  Train Loss:  0.63,  Train Acc: 77.34%,  Val Loss:  0.69,  Val Acc: 63.70%,  Time: 0:00:32
+2-------8
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+训练集：
+tensor([0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0,
+        0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0,
+        0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0,
+        0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0,
+        1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1,
+        0, 0, 1, 0, 0, 0, 0, 0])
+tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0])
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+torch.Size([83, 512, 768])
+torch.Size([83, 1, 512, 768])
+torch.Size([83, 1, 508, 764])
+torch.Size([83, 508, 764])
+torch.Size([83, 508, 128])
+torch.Size([83, 128, 508])
+torch.Size([83, 128, 1])
+torch.Size([83, 128])
+验证集：
+[0 1 0 0 1 0 0 1 0 0 1 1 0 1 1 1 1 0 1 1 0 1 0 0 0 1 0 0 1 1 0 0 0 1 1 0 1
+ 0 1 0 1 0 0 0 0 0 0 1 0 1 1 0 1 0 1 0 1 0 1 0 0 1 0 1 1 0 0 0 1 0 0 0 0 0
+ 0 0 0 1 0 1 0 0 0 0 0 1 1 1 1 1 0 0 0 0 0 1 1 0 0 0 1 1 0 0 0 0 0 1 1 1 1
+ 0 0 0 0 1 1 0 1 0 1 0 0 0 0 0 0 1 1 1 1 0 0 0 0 1 1 0 0 0 0 1 0 0 1 0 0 1
+ 0 0 1 0 1 0 0 0 0 1 1 1 0 0 0 0 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1
+ 1 0 0 1 0 0 0 0 0 0 0 0 1 1 1 0 0 1 0 1 1 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0
+ 0 0 1 0 1 1 1 0 0 0 0 1 0 1 1 0 1 1 0 0 0 0 1 0 1 1 0 0 0 0 0 0 1 0 0 1 0
+ 0 0 1 0 0 0 0 0 0 1 1 1 0 0 0 1 0 1 1 1 1 0 1 1 0 1 1 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 1 1 1 0 0 1 1 0 0 1 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 1 0 1 1 0 0
+ 0 1 0 1 0 0 1 1 0 1 1 1 1 1 0 1 1 0 1 0 0 0 0 0 0 1 1 0 1 0 1 1 0 0 0 0 0
+ 1 1 0 1 1 0 1 0 1 1 0 0 0 0 0 1 1 1 1 1 0 1 0 0 0 0 0 1 0 0 0 0 1 0 0 1 0
+ 0 0 0 1 0 0 0 0 1 0 0 1 0 1 0 0 0 1 0 1 0 0 1 0 1 0 1 1 1 0 0 0 1 0 0 1 0
+ 0 1 0 1 1 0 1 0 1 0 0 0 0 1 1 0 0 1 0 1 0 1 0 0 1 0 1 1 1 0 1 0 0 0 0 1 0
+ 1 0 0 0 0 0 1 0 1 1 0 0 1 0 0 0 0 0 0 1 0 0 1 1 0 0 0 1 0 1 0 1 0 1 1 0 0
+ 1 0 0 0 0 0 0 0 1 1 0 0 0 1 0 0 1 1 1 0 1 0 0 0 1 0 0 0 1 1 0 0 0 1 0 0 1
+ 1 0 0 0 0 1 0 0 0 1 0 0 1 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0
+ 0 0 1]
+[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0]
+Iter:      2,  Train Loss:  0.52,  Train Acc: 78.12%,  Val Loss:  0.83,  Val Acc: 63.70%,  Time: 0:00:47
+3-------8
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+训练集：
+tensor([0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0,
+        0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1,
+        0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0,
+        0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 1, 1, 0, 0, 0, 1, 0])
+tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0])
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+torch.Size([83, 512, 768])
+torch.Size([83, 1, 512, 768])
+torch.Size([83, 1, 508, 764])
+torch.Size([83, 508, 764])
+torch.Size([83, 508, 128])
+torch.Size([83, 128, 508])
+torch.Size([83, 128, 1])
+torch.Size([83, 128])
+验证集：
+[0 1 0 0 1 0 0 1 0 0 1 1 0 1 1 1 1 0 1 1 0 1 0 0 0 1 0 0 1 1 0 0 0 1 1 0 1
+ 0 1 0 1 0 0 0 0 0 0 1 0 1 1 0 1 0 1 0 1 0 1 0 0 1 0 1 1 0 0 0 1 0 0 0 0 0
+ 0 0 0 1 0 1 0 0 0 0 0 1 1 1 1 1 0 0 0 0 0 1 1 0 0 0 1 1 0 0 0 0 0 1 1 1 1
+ 0 0 0 0 1 1 0 1 0 1 0 0 0 0 0 0 1 1 1 1 0 0 0 0 1 1 0 0 0 0 1 0 0 1 0 0 1
+ 0 0 1 0 1 0 0 0 0 1 1 1 0 0 0 0 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1
+ 1 0 0 1 0 0 0 0 0 0 0 0 1 1 1 0 0 1 0 1 1 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0
+ 0 0 1 0 1 1 1 0 0 0 0 1 0 1 1 0 1 1 0 0 0 0 1 0 1 1 0 0 0 0 0 0 1 0 0 1 0
+ 0 0 1 0 0 0 0 0 0 1 1 1 0 0 0 1 0 1 1 1 1 0 1 1 0 1 1 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 1 1 1 0 0 1 1 0 0 1 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 1 0 1 1 0 0
+ 0 1 0 1 0 0 1 1 0 1 1 1 1 1 0 1 1 0 1 0 0 0 0 0 0 1 1 0 1 0 1 1 0 0 0 0 0
+ 1 1 0 1 1 0 1 0 1 1 0 0 0 0 0 1 1 1 1 1 0 1 0 0 0 0 0 1 0 0 0 0 1 0 0 1 0
+ 0 0 0 1 0 0 0 0 1 0 0 1 0 1 0 0 0 1 0 1 0 0 1 0 1 0 1 1 1 0 0 0 1 0 0 1 0
+ 0 1 0 1 1 0 1 0 1 0 0 0 0 1 1 0 0 1 0 1 0 1 0 0 1 0 1 1 1 0 1 0 0 0 0 1 0
+ 1 0 0 0 0 0 1 0 1 1 0 0 1 0 0 0 0 0 0 1 0 0 1 1 0 0 0 1 0 1 0 1 0 1 1 0 0
+ 1 0 0 0 0 0 0 0 1 1 0 0 0 1 0 0 1 1 1 0 1 0 0 0 1 0 0 0 1 1 0 0 0 1 0 0 1
+ 1 0 0 0 0 1 0 0 0 1 0 0 1 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0
+ 0 0 1]
+[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0]
+Iter:      3,  Train Loss:  0.63,  Train Acc: 74.22%,  Val Loss:  0.75,  Val Acc: 63.70%,  Time: 0:01:02
+4-------8
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+训练集：
+tensor([1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1,
+        1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 1, 0, 0, 0, 0, 0, 0])
+tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0])
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+torch.Size([83, 512, 768])
+torch.Size([83, 1, 512, 768])
+torch.Size([83, 1, 508, 764])
+torch.Size([83, 508, 764])
+torch.Size([83, 508, 128])
+torch.Size([83, 128, 508])
+torch.Size([83, 128, 1])
+torch.Size([83, 128])
+验证集：
+[0 1 0 0 1 0 0 1 0 0 1 1 0 1 1 1 1 0 1 1 0 1 0 0 0 1 0 0 1 1 0 0 0 1 1 0 1
+ 0 1 0 1 0 0 0 0 0 0 1 0 1 1 0 1 0 1 0 1 0 1 0 0 1 0 1 1 0 0 0 1 0 0 0 0 0
+ 0 0 0 1 0 1 0 0 0 0 0 1 1 1 1 1 0 0 0 0 0 1 1 0 0 0 1 1 0 0 0 0 0 1 1 1 1
+ 0 0 0 0 1 1 0 1 0 1 0 0 0 0 0 0 1 1 1 1 0 0 0 0 1 1 0 0 0 0 1 0 0 1 0 0 1
+ 0 0 1 0 1 0 0 0 0 1 1 1 0 0 0 0 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1
+ 1 0 0 1 0 0 0 0 0 0 0 0 1 1 1 0 0 1 0 1 1 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0
+ 0 0 1 0 1 1 1 0 0 0 0 1 0 1 1 0 1 1 0 0 0 0 1 0 1 1 0 0 0 0 0 0 1 0 0 1 0
+ 0 0 1 0 0 0 0 0 0 1 1 1 0 0 0 1 0 1 1 1 1 0 1 1 0 1 1 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 1 1 1 0 0 1 1 0 0 1 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 1 0 1 1 0 0
+ 0 1 0 1 0 0 1 1 0 1 1 1 1 1 0 1 1 0 1 0 0 0 0 0 0 1 1 0 1 0 1 1 0 0 0 0 0
+ 1 1 0 1 1 0 1 0 1 1 0 0 0 0 0 1 1 1 1 1 0 1 0 0 0 0 0 1 0 0 0 0 1 0 0 1 0
+ 0 0 0 1 0 0 0 0 1 0 0 1 0 1 0 0 0 1 0 1 0 0 1 0 1 0 1 1 1 0 0 0 1 0 0 1 0
+ 0 1 0 1 1 0 1 0 1 0 0 0 0 1 1 0 0 1 0 1 0 1 0 0 1 0 1 1 1 0 1 0 0 0 0 1 0
+ 1 0 0 0 0 0 1 0 1 1 0 0 1 0 0 0 0 0 0 1 0 0 1 1 0 0 0 1 0 1 0 1 0 1 1 0 0
+ 1 0 0 0 0 0 0 0 1 1 0 0 0 1 0 0 1 1 1 0 1 0 0 0 1 0 0 0 1 1 0 0 0 1 0 0 1
+ 1 0 0 0 0 1 0 0 0 1 0 0 1 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0
+ 0 0 1]
+[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0]
+Iter:      4,  Train Loss:  0.45,  Train Acc: 82.81%,  Val Loss:   0.7,  Val Acc: 63.70%,  Time: 0:01:17
+5-------8
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+训练集：
+tensor([0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0,
+        0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1,
+        0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1,
+        0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0,
+        0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1,
+        0, 0, 0, 0, 1, 0, 0, 0])
+tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0])
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+torch.Size([83, 512, 768])
+torch.Size([83, 1, 512, 768])
+torch.Size([83, 1, 508, 764])
+torch.Size([83, 508, 764])
+torch.Size([83, 508, 128])
+torch.Size([83, 128, 508])
+torch.Size([83, 128, 1])
+torch.Size([83, 128])
+验证集：
+[0 1 0 0 1 0 0 1 0 0 1 1 0 1 1 1 1 0 1 1 0 1 0 0 0 1 0 0 1 1 0 0 0 1 1 0 1
+ 0 1 0 1 0 0 0 0 0 0 1 0 1 1 0 1 0 1 0 1 0 1 0 0 1 0 1 1 0 0 0 1 0 0 0 0 0
+ 0 0 0 1 0 1 0 0 0 0 0 1 1 1 1 1 0 0 0 0 0 1 1 0 0 0 1 1 0 0 0 0 0 1 1 1 1
+ 0 0 0 0 1 1 0 1 0 1 0 0 0 0 0 0 1 1 1 1 0 0 0 0 1 1 0 0 0 0 1 0 0 1 0 0 1
+ 0 0 1 0 1 0 0 0 0 1 1 1 0 0 0 0 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1
+ 1 0 0 1 0 0 0 0 0 0 0 0 1 1 1 0 0 1 0 1 1 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0
+ 0 0 1 0 1 1 1 0 0 0 0 1 0 1 1 0 1 1 0 0 0 0 1 0 1 1 0 0 0 0 0 0 1 0 0 1 0
+ 0 0 1 0 0 0 0 0 0 1 1 1 0 0 0 1 0 1 1 1 1 0 1 1 0 1 1 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 1 1 1 0 0 1 1 0 0 1 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 1 0 1 1 0 0
+ 0 1 0 1 0 0 1 1 0 1 1 1 1 1 0 1 1 0 1 0 0 0 0 0 0 1 1 0 1 0 1 1 0 0 0 0 0
+ 1 1 0 1 1 0 1 0 1 1 0 0 0 0 0 1 1 1 1 1 0 1 0 0 0 0 0 1 0 0 0 0 1 0 0 1 0
+ 0 0 0 1 0 0 0 0 1 0 0 1 0 1 0 0 0 1 0 1 0 0 1 0 1 0 1 1 1 0 0 0 1 0 0 1 0
+ 0 1 0 1 1 0 1 0 1 0 0 0 0 1 1 0 0 1 0 1 0 1 0 0 1 0 1 1 1 0 1 0 0 0 0 1 0
+ 1 0 0 0 0 0 1 0 1 1 0 0 1 0 0 0 0 0 0 1 0 0 1 1 0 0 0 1 0 1 0 1 0 1 1 0 0
+ 1 0 0 0 0 0 0 0 1 1 0 0 0 1 0 0 1 1 1 0 1 0 0 0 1 0 0 0 1 1 0 0 0 1 0 0 1
+ 1 0 0 0 0 1 0 0 0 1 0 0 1 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0
+ 0 0 1]
+[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0]
+Iter:      5,  Train Loss:  0.47,  Train Acc: 82.03%,  Val Loss:  0.69,  Val Acc: 63.70%,  Time: 0:01:32
+6-------8
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+训练集：
+tensor([1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1,
+        1, 1, 0, 0, 0, 0, 0, 0])
+tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0])
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+torch.Size([83, 512, 768])
+torch.Size([83, 1, 512, 768])
+torch.Size([83, 1, 508, 764])
+torch.Size([83, 508, 764])
+torch.Size([83, 508, 128])
+torch.Size([83, 128, 508])
+torch.Size([83, 128, 1])
+torch.Size([83, 128])
+验证集：
+[0 1 0 0 1 0 0 1 0 0 1 1 0 1 1 1 1 0 1 1 0 1 0 0 0 1 0 0 1 1 0 0 0 1 1 0 1
+ 0 1 0 1 0 0 0 0 0 0 1 0 1 1 0 1 0 1 0 1 0 1 0 0 1 0 1 1 0 0 0 1 0 0 0 0 0
+ 0 0 0 1 0 1 0 0 0 0 0 1 1 1 1 1 0 0 0 0 0 1 1 0 0 0 1 1 0 0 0 0 0 1 1 1 1
+ 0 0 0 0 1 1 0 1 0 1 0 0 0 0 0 0 1 1 1 1 0 0 0 0 1 1 0 0 0 0 1 0 0 1 0 0 1
+ 0 0 1 0 1 0 0 0 0 1 1 1 0 0 0 0 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1
+ 1 0 0 1 0 0 0 0 0 0 0 0 1 1 1 0 0 1 0 1 1 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0
+ 0 0 1 0 1 1 1 0 0 0 0 1 0 1 1 0 1 1 0 0 0 0 1 0 1 1 0 0 0 0 0 0 1 0 0 1 0
+ 0 0 1 0 0 0 0 0 0 1 1 1 0 0 0 1 0 1 1 1 1 0 1 1 0 1 1 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 1 1 1 0 0 1 1 0 0 1 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 1 0 1 1 0 0
+ 0 1 0 1 0 0 1 1 0 1 1 1 1 1 0 1 1 0 1 0 0 0 0 0 0 1 1 0 1 0 1 1 0 0 0 0 0
+ 1 1 0 1 1 0 1 0 1 1 0 0 0 0 0 1 1 1 1 1 0 1 0 0 0 0 0 1 0 0 0 0 1 0 0 1 0
+ 0 0 0 1 0 0 0 0 1 0 0 1 0 1 0 0 0 1 0 1 0 0 1 0 1 0 1 1 1 0 0 0 1 0 0 1 0
+ 0 1 0 1 1 0 1 0 1 0 0 0 0 1 1 0 0 1 0 1 0 1 0 0 1 0 1 1 1 0 1 0 0 0 0 1 0
+ 1 0 0 0 0 0 1 0 1 1 0 0 1 0 0 0 0 0 0 1 0 0 1 1 0 0 0 1 0 1 0 1 0 1 1 0 0
+ 1 0 0 0 0 0 0 0 1 1 0 0 0 1 0 0 1 1 1 0 1 0 0 0 1 0 0 0 1 1 0 0 0 1 0 0 1
+ 1 0 0 0 0 1 0 0 0 1 0 0 1 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0
+ 0 0 1]
+[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0]
+Iter:      6,  Train Loss:  0.46,  Train Acc: 82.81%,  Val Loss:   0.7,  Val Acc: 63.70%,  Time: 0:01:47
+7-------8
+torch.Size([39, 512, 768])
+torch.Size([39, 1, 512, 768])
+torch.Size([39, 1, 508, 764])
+torch.Size([39, 508, 764])
+torch.Size([39, 508, 128])
+torch.Size([39, 128, 508])
+torch.Size([39, 128, 1])
+torch.Size([39, 128])
+训练集：
+tensor([0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0])
+tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+torch.Size([83, 512, 768])
+torch.Size([83, 1, 512, 768])
+torch.Size([83, 1, 508, 764])
+torch.Size([83, 508, 764])
+torch.Size([83, 508, 128])
+torch.Size([83, 128, 508])
+torch.Size([83, 128, 1])
+torch.Size([83, 128])
+验证集：
+[0 1 0 0 1 0 0 1 0 0 1 1 0 1 1 1 1 0 1 1 0 1 0 0 0 1 0 0 1 1 0 0 0 1 1 0 1
+ 0 1 0 1 0 0 0 0 0 0 1 0 1 1 0 1 0 1 0 1 0 1 0 0 1 0 1 1 0 0 0 1 0 0 0 0 0
+ 0 0 0 1 0 1 0 0 0 0 0 1 1 1 1 1 0 0 0 0 0 1 1 0 0 0 1 1 0 0 0 0 0 1 1 1 1
+ 0 0 0 0 1 1 0 1 0 1 0 0 0 0 0 0 1 1 1 1 0 0 0 0 1 1 0 0 0 0 1 0 0 1 0 0 1
+ 0 0 1 0 1 0 0 0 0 1 1 1 0 0 0 0 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1
+ 1 0 0 1 0 0 0 0 0 0 0 0 1 1 1 0 0 1 0 1 1 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0
+ 0 0 1 0 1 1 1 0 0 0 0 1 0 1 1 0 1 1 0 0 0 0 1 0 1 1 0 0 0 0 0 0 1 0 0 1 0
+ 0 0 1 0 0 0 0 0 0 1 1 1 0 0 0 1 0 1 1 1 1 0 1 1 0 1 1 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 1 1 1 0 0 1 1 0 0 1 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 1 0 1 1 0 0
+ 0 1 0 1 0 0 1 1 0 1 1 1 1 1 0 1 1 0 1 0 0 0 0 0 0 1 1 0 1 0 1 1 0 0 0 0 0
+ 1 1 0 1 1 0 1 0 1 1 0 0 0 0 0 1 1 1 1 1 0 1 0 0 0 0 0 1 0 0 0 0 1 0 0 1 0
+ 0 0 0 1 0 0 0 0 1 0 0 1 0 1 0 0 0 1 0 1 0 0 1 0 1 0 1 1 1 0 0 0 1 0 0 1 0
+ 0 1 0 1 1 0 1 0 1 0 0 0 0 1 1 0 0 1 0 1 0 1 0 0 1 0 1 1 1 0 1 0 0 0 0 1 0
+ 1 0 0 0 0 0 1 0 1 1 0 0 1 0 0 0 0 0 0 1 0 0 1 1 0 0 0 1 0 1 0 1 0 1 1 0 0
+ 1 0 0 0 0 0 0 0 1 1 0 0 0 1 0 0 1 1 1 0 1 0 0 0 1 0 0 0 1 1 0 0 0 1 0 0 1
+ 1 0 0 0 0 1 0 0 0 1 0 0 1 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0
+ 0 0 1]
+[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0]
+Iter:      7,  Train Loss:  0.39,  Train Acc: 87.18%,  Val Loss:  0.75,  Val Acc: 63.70%,  Time: 0:02:00
+Epoch [2/2]
+0-------8
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+训练集：
+tensor([0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0,
+        0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0,
+        0, 1, 0, 0, 0, 0, 1, 0])
+tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0])
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+torch.Size([83, 512, 768])
+torch.Size([83, 1, 512, 768])
+torch.Size([83, 1, 508, 764])
+torch.Size([83, 508, 764])
+torch.Size([83, 508, 128])
+torch.Size([83, 128, 508])
+torch.Size([83, 128, 1])
+torch.Size([83, 128])
+验证集：
+[0 1 0 0 1 0 0 1 0 0 1 1 0 1 1 1 1 0 1 1 0 1 0 0 0 1 0 0 1 1 0 0 0 1 1 0 1
+ 0 1 0 1 0 0 0 0 0 0 1 0 1 1 0 1 0 1 0 1 0 1 0 0 1 0 1 1 0 0 0 1 0 0 0 0 0
+ 0 0 0 1 0 1 0 0 0 0 0 1 1 1 1 1 0 0 0 0 0 1 1 0 0 0 1 1 0 0 0 0 0 1 1 1 1
+ 0 0 0 0 1 1 0 1 0 1 0 0 0 0 0 0 1 1 1 1 0 0 0 0 1 1 0 0 0 0 1 0 0 1 0 0 1
+ 0 0 1 0 1 0 0 0 0 1 1 1 0 0 0 0 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1
+ 1 0 0 1 0 0 0 0 0 0 0 0 1 1 1 0 0 1 0 1 1 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0
+ 0 0 1 0 1 1 1 0 0 0 0 1 0 1 1 0 1 1 0 0 0 0 1 0 1 1 0 0 0 0 0 0 1 0 0 1 0
+ 0 0 1 0 0 0 0 0 0 1 1 1 0 0 0 1 0 1 1 1 1 0 1 1 0 1 1 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 1 1 1 0 0 1 1 0 0 1 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 1 0 1 1 0 0
+ 0 1 0 1 0 0 1 1 0 1 1 1 1 1 0 1 1 0 1 0 0 0 0 0 0 1 1 0 1 0 1 1 0 0 0 0 0
+ 1 1 0 1 1 0 1 0 1 1 0 0 0 0 0 1 1 1 1 1 0 1 0 0 0 0 0 1 0 0 0 0 1 0 0 1 0
+ 0 0 0 1 0 0 0 0 1 0 0 1 0 1 0 0 0 1 0 1 0 0 1 0 1 0 1 1 1 0 0 0 1 0 0 1 0
+ 0 1 0 1 1 0 1 0 1 0 0 0 0 1 1 0 0 1 0 1 0 1 0 0 1 0 1 1 1 0 1 0 0 0 0 1 0
+ 1 0 0 0 0 0 1 0 1 1 0 0 1 0 0 0 0 0 0 1 0 0 1 1 0 0 0 1 0 1 0 1 0 1 1 0 0
+ 1 0 0 0 0 0 0 0 1 1 0 0 0 1 0 0 1 1 1 0 1 0 0 0 1 0 0 0 1 1 0 0 0 1 0 0 1
+ 1 0 0 0 0 1 0 0 0 1 0 0 1 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0
+ 0 0 1]
+[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0]
+Iter:      8,  Train Loss:  0.49,  Train Acc: 79.69%,  Val Loss:  0.78,  Val Acc: 63.70%,  Time: 0:02:15
+1-------8
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+训练集：
+tensor([1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1,
+        1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1,
+        0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0,
+        1, 0, 0, 0, 0, 1, 0, 1])
+tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0])
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+torch.Size([83, 512, 768])
+torch.Size([83, 1, 512, 768])
+torch.Size([83, 1, 508, 764])
+torch.Size([83, 508, 764])
+torch.Size([83, 508, 128])
+torch.Size([83, 128, 508])
+torch.Size([83, 128, 1])
+torch.Size([83, 128])
+验证集：
+[0 1 0 0 1 0 0 1 0 0 1 1 0 1 1 1 1 0 1 1 0 1 0 0 0 1 0 0 1 1 0 0 0 1 1 0 1
+ 0 1 0 1 0 0 0 0 0 0 1 0 1 1 0 1 0 1 0 1 0 1 0 0 1 0 1 1 0 0 0 1 0 0 0 0 0
+ 0 0 0 1 0 1 0 0 0 0 0 1 1 1 1 1 0 0 0 0 0 1 1 0 0 0 1 1 0 0 0 0 0 1 1 1 1
+ 0 0 0 0 1 1 0 1 0 1 0 0 0 0 0 0 1 1 1 1 0 0 0 0 1 1 0 0 0 0 1 0 0 1 0 0 1
+ 0 0 1 0 1 0 0 0 0 1 1 1 0 0 0 0 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1
+ 1 0 0 1 0 0 0 0 0 0 0 0 1 1 1 0 0 1 0 1 1 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0
+ 0 0 1 0 1 1 1 0 0 0 0 1 0 1 1 0 1 1 0 0 0 0 1 0 1 1 0 0 0 0 0 0 1 0 0 1 0
+ 0 0 1 0 0 0 0 0 0 1 1 1 0 0 0 1 0 1 1 1 1 0 1 1 0 1 1 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 1 1 1 0 0 1 1 0 0 1 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 1 0 1 1 0 0
+ 0 1 0 1 0 0 1 1 0 1 1 1 1 1 0 1 1 0 1 0 0 0 0 0 0 1 1 0 1 0 1 1 0 0 0 0 0
+ 1 1 0 1 1 0 1 0 1 1 0 0 0 0 0 1 1 1 1 1 0 1 0 0 0 0 0 1 0 0 0 0 1 0 0 1 0
+ 0 0 0 1 0 0 0 0 1 0 0 1 0 1 0 0 0 1 0 1 0 0 1 0 1 0 1 1 1 0 0 0 1 0 0 1 0
+ 0 1 0 1 1 0 1 0 1 0 0 0 0 1 1 0 0 1 0 1 0 1 0 0 1 0 1 1 1 0 1 0 0 0 0 1 0
+ 1 0 0 0 0 0 1 0 1 1 0 0 1 0 0 0 0 0 0 1 0 0 1 1 0 0 0 1 0 1 0 1 0 1 1 0 0
+ 1 0 0 0 0 0 0 0 1 1 0 0 0 1 0 0 1 1 1 0 1 0 0 0 1 0 0 0 1 1 0 0 0 1 0 0 1
+ 1 0 0 0 0 1 0 0 0 1 0 0 1 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0
+ 0 0 1]
+[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0]
+Iter:      9,  Train Loss:  0.52,  Train Acc: 77.34%,  Val Loss:  0.77,  Val Acc: 63.70%,  Time: 0:02:31
+2-------8
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+训练集：
+tensor([0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0,
+        0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0,
+        0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0,
+        0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0,
+        1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1,
+        0, 0, 1, 0, 0, 0, 0, 0])
+tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0])
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+torch.Size([83, 512, 768])
+torch.Size([83, 1, 512, 768])
+torch.Size([83, 1, 508, 764])
+torch.Size([83, 508, 764])
+torch.Size([83, 508, 128])
+torch.Size([83, 128, 508])
+torch.Size([83, 128, 1])
+torch.Size([83, 128])
+验证集：
+[0 1 0 0 1 0 0 1 0 0 1 1 0 1 1 1 1 0 1 1 0 1 0 0 0 1 0 0 1 1 0 0 0 1 1 0 1
+ 0 1 0 1 0 0 0 0 0 0 1 0 1 1 0 1 0 1 0 1 0 1 0 0 1 0 1 1 0 0 0 1 0 0 0 0 0
+ 0 0 0 1 0 1 0 0 0 0 0 1 1 1 1 1 0 0 0 0 0 1 1 0 0 0 1 1 0 0 0 0 0 1 1 1 1
+ 0 0 0 0 1 1 0 1 0 1 0 0 0 0 0 0 1 1 1 1 0 0 0 0 1 1 0 0 0 0 1 0 0 1 0 0 1
+ 0 0 1 0 1 0 0 0 0 1 1 1 0 0 0 0 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1
+ 1 0 0 1 0 0 0 0 0 0 0 0 1 1 1 0 0 1 0 1 1 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0
+ 0 0 1 0 1 1 1 0 0 0 0 1 0 1 1 0 1 1 0 0 0 0 1 0 1 1 0 0 0 0 0 0 1 0 0 1 0
+ 0 0 1 0 0 0 0 0 0 1 1 1 0 0 0 1 0 1 1 1 1 0 1 1 0 1 1 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 1 1 1 0 0 1 1 0 0 1 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 1 0 1 1 0 0
+ 0 1 0 1 0 0 1 1 0 1 1 1 1 1 0 1 1 0 1 0 0 0 0 0 0 1 1 0 1 0 1 1 0 0 0 0 0
+ 1 1 0 1 1 0 1 0 1 1 0 0 0 0 0 1 1 1 1 1 0 1 0 0 0 0 0 1 0 0 0 0 1 0 0 1 0
+ 0 0 0 1 0 0 0 0 1 0 0 1 0 1 0 0 0 1 0 1 0 0 1 0 1 0 1 1 1 0 0 0 1 0 0 1 0
+ 0 1 0 1 1 0 1 0 1 0 0 0 0 1 1 0 0 1 0 1 0 1 0 0 1 0 1 1 1 0 1 0 0 0 0 1 0
+ 1 0 0 0 0 0 1 0 1 1 0 0 1 0 0 0 0 0 0 1 0 0 1 1 0 0 0 1 0 1 0 1 0 1 1 0 0
+ 1 0 0 0 0 0 0 0 1 1 0 0 0 1 0 0 1 1 1 0 1 0 0 0 1 0 0 0 1 1 0 0 0 1 0 0 1
+ 1 0 0 0 0 1 0 0 0 1 0 0 1 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0
+ 0 0 1]
+[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0]
+Iter:     10,  Train Loss:   0.5,  Train Acc: 78.12%,  Val Loss:  0.75,  Val Acc: 63.70%,  Time: 0:02:46
+3-------8
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+训练集：
+tensor([0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0,
+        0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1,
+        0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0,
+        0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 1, 1, 0, 0, 0, 1, 0])
+tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0])
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+torch.Size([83, 512, 768])
+torch.Size([83, 1, 512, 768])
+torch.Size([83, 1, 508, 764])
+torch.Size([83, 508, 764])
+torch.Size([83, 508, 128])
+torch.Size([83, 128, 508])
+torch.Size([83, 128, 1])
+torch.Size([83, 128])
+验证集：
+[0 1 0 0 1 0 0 1 0 0 1 1 0 1 1 1 1 0 1 1 0 1 0 0 0 1 0 0 1 1 0 0 0 1 1 0 1
+ 0 1 0 1 0 0 0 0 0 0 1 0 1 1 0 1 0 1 0 1 0 1 0 0 1 0 1 1 0 0 0 1 0 0 0 0 0
+ 0 0 0 1 0 1 0 0 0 0 0 1 1 1 1 1 0 0 0 0 0 1 1 0 0 0 1 1 0 0 0 0 0 1 1 1 1
+ 0 0 0 0 1 1 0 1 0 1 0 0 0 0 0 0 1 1 1 1 0 0 0 0 1 1 0 0 0 0 1 0 0 1 0 0 1
+ 0 0 1 0 1 0 0 0 0 1 1 1 0 0 0 0 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1
+ 1 0 0 1 0 0 0 0 0 0 0 0 1 1 1 0 0 1 0 1 1 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0
+ 0 0 1 0 1 1 1 0 0 0 0 1 0 1 1 0 1 1 0 0 0 0 1 0 1 1 0 0 0 0 0 0 1 0 0 1 0
+ 0 0 1 0 0 0 0 0 0 1 1 1 0 0 0 1 0 1 1 1 1 0 1 1 0 1 1 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 1 1 1 0 0 1 1 0 0 1 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 1 0 1 1 0 0
+ 0 1 0 1 0 0 1 1 0 1 1 1 1 1 0 1 1 0 1 0 0 0 0 0 0 1 1 0 1 0 1 1 0 0 0 0 0
+ 1 1 0 1 1 0 1 0 1 1 0 0 0 0 0 1 1 1 1 1 0 1 0 0 0 0 0 1 0 0 0 0 1 0 0 1 0
+ 0 0 0 1 0 0 0 0 1 0 0 1 0 1 0 0 0 1 0 1 0 0 1 0 1 0 1 1 1 0 0 0 1 0 0 1 0
+ 0 1 0 1 1 0 1 0 1 0 0 0 0 1 1 0 0 1 0 1 0 1 0 0 1 0 1 1 1 0 1 0 0 0 0 1 0
+ 1 0 0 0 0 0 1 0 1 1 0 0 1 0 0 0 0 0 0 1 0 0 1 1 0 0 0 1 0 1 0 1 0 1 1 0 0
+ 1 0 0 0 0 0 0 0 1 1 0 0 0 1 0 0 1 1 1 0 1 0 0 0 1 0 0 0 1 1 0 0 0 1 0 0 1
+ 1 0 0 0 0 1 0 0 0 1 0 0 1 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0
+ 0 0 1]
+[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0]
+Iter:     11,  Train Loss:  0.55,  Train Acc: 74.22%,  Val Loss:  0.71,  Val Acc: 63.70%,  Time: 0:03:01
+4-------8
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+训练集：
+tensor([1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1,
+        1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 1, 0, 0, 0, 0, 0, 0])
+tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0])
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+torch.Size([83, 512, 768])
+torch.Size([83, 1, 512, 768])
+torch.Size([83, 1, 508, 764])
+torch.Size([83, 508, 764])
+torch.Size([83, 508, 128])
+torch.Size([83, 128, 508])
+torch.Size([83, 128, 1])
+torch.Size([83, 128])
+验证集：
+[0 1 0 0 1 0 0 1 0 0 1 1 0 1 1 1 1 0 1 1 0 1 0 0 0 1 0 0 1 1 0 0 0 1 1 0 1
+ 0 1 0 1 0 0 0 0 0 0 1 0 1 1 0 1 0 1 0 1 0 1 0 0 1 0 1 1 0 0 0 1 0 0 0 0 0
+ 0 0 0 1 0 1 0 0 0 0 0 1 1 1 1 1 0 0 0 0 0 1 1 0 0 0 1 1 0 0 0 0 0 1 1 1 1
+ 0 0 0 0 1 1 0 1 0 1 0 0 0 0 0 0 1 1 1 1 0 0 0 0 1 1 0 0 0 0 1 0 0 1 0 0 1
+ 0 0 1 0 1 0 0 0 0 1 1 1 0 0 0 0 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1
+ 1 0 0 1 0 0 0 0 0 0 0 0 1 1 1 0 0 1 0 1 1 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0
+ 0 0 1 0 1 1 1 0 0 0 0 1 0 1 1 0 1 1 0 0 0 0 1 0 1 1 0 0 0 0 0 0 1 0 0 1 0
+ 0 0 1 0 0 0 0 0 0 1 1 1 0 0 0 1 0 1 1 1 1 0 1 1 0 1 1 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 1 1 1 0 0 1 1 0 0 1 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 1 0 1 1 0 0
+ 0 1 0 1 0 0 1 1 0 1 1 1 1 1 0 1 1 0 1 0 0 0 0 0 0 1 1 0 1 0 1 1 0 0 0 0 0
+ 1 1 0 1 1 0 1 0 1 1 0 0 0 0 0 1 1 1 1 1 0 1 0 0 0 0 0 1 0 0 0 0 1 0 0 1 0
+ 0 0 0 1 0 0 0 0 1 0 0 1 0 1 0 0 0 1 0 1 0 0 1 0 1 0 1 1 1 0 0 0 1 0 0 1 0
+ 0 1 0 1 1 0 1 0 1 0 0 0 0 1 1 0 0 1 0 1 0 1 0 0 1 0 1 1 1 0 1 0 0 0 0 1 0
+ 1 0 0 0 0 0 1 0 1 1 0 0 1 0 0 0 0 0 0 1 0 0 1 1 0 0 0 1 0 1 0 1 0 1 1 0 0
+ 1 0 0 0 0 0 0 0 1 1 0 0 0 1 0 0 1 1 1 0 1 0 0 0 1 0 0 0 1 1 0 0 0 1 0 0 1
+ 1 0 0 0 0 1 0 0 0 1 0 0 1 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0
+ 0 0 1]
+[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0]
+Iter:     12,  Train Loss:  0.43,  Train Acc: 82.81%,  Val Loss:   0.7,  Val Acc: 63.70%,  Time: 0:03:16
+5-------8
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+训练集：
+tensor([0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0,
+        0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1,
+        0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1,
+        0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0,
+        0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1,
+        0, 0, 0, 0, 1, 0, 0, 0])
+tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0])
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+torch.Size([83, 512, 768])
+torch.Size([83, 1, 512, 768])
+torch.Size([83, 1, 508, 764])
+torch.Size([83, 508, 764])
+torch.Size([83, 508, 128])
+torch.Size([83, 128, 508])
+torch.Size([83, 128, 1])
+torch.Size([83, 128])
+验证集：
+[0 1 0 0 1 0 0 1 0 0 1 1 0 1 1 1 1 0 1 1 0 1 0 0 0 1 0 0 1 1 0 0 0 1 1 0 1
+ 0 1 0 1 0 0 0 0 0 0 1 0 1 1 0 1 0 1 0 1 0 1 0 0 1 0 1 1 0 0 0 1 0 0 0 0 0
+ 0 0 0 1 0 1 0 0 0 0 0 1 1 1 1 1 0 0 0 0 0 1 1 0 0 0 1 1 0 0 0 0 0 1 1 1 1
+ 0 0 0 0 1 1 0 1 0 1 0 0 0 0 0 0 1 1 1 1 0 0 0 0 1 1 0 0 0 0 1 0 0 1 0 0 1
+ 0 0 1 0 1 0 0 0 0 1 1 1 0 0 0 0 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1
+ 1 0 0 1 0 0 0 0 0 0 0 0 1 1 1 0 0 1 0 1 1 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0
+ 0 0 1 0 1 1 1 0 0 0 0 1 0 1 1 0 1 1 0 0 0 0 1 0 1 1 0 0 0 0 0 0 1 0 0 1 0
+ 0 0 1 0 0 0 0 0 0 1 1 1 0 0 0 1 0 1 1 1 1 0 1 1 0 1 1 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 1 1 1 0 0 1 1 0 0 1 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 1 0 1 1 0 0
+ 0 1 0 1 0 0 1 1 0 1 1 1 1 1 0 1 1 0 1 0 0 0 0 0 0 1 1 0 1 0 1 1 0 0 0 0 0
+ 1 1 0 1 1 0 1 0 1 1 0 0 0 0 0 1 1 1 1 1 0 1 0 0 0 0 0 1 0 0 0 0 1 0 0 1 0
+ 0 0 0 1 0 0 0 0 1 0 0 1 0 1 0 0 0 1 0 1 0 0 1 0 1 0 1 1 1 0 0 0 1 0 0 1 0
+ 0 1 0 1 1 0 1 0 1 0 0 0 0 1 1 0 0 1 0 1 0 1 0 0 1 0 1 1 1 0 1 0 0 0 0 1 0
+ 1 0 0 0 0 0 1 0 1 1 0 0 1 0 0 0 0 0 0 1 0 0 1 1 0 0 0 1 0 1 0 1 0 1 1 0 0
+ 1 0 0 0 0 0 0 0 1 1 0 0 0 1 0 0 1 1 1 0 1 0 0 0 1 0 0 0 1 1 0 0 0 1 0 0 1
+ 1 0 0 0 0 1 0 0 0 1 0 0 1 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0
+ 0 0 1]
+[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0]
+Iter:     13,  Train Loss:  0.45,  Train Acc: 82.03%,  Val Loss:  0.69,  Val Acc: 63.70%,  Time: 0:03:32
+6-------8
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+训练集：
+tensor([1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1,
+        1, 1, 0, 0, 0, 0, 0, 0])
+tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0])
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+torch.Size([83, 512, 768])
+torch.Size([83, 1, 512, 768])
+torch.Size([83, 1, 508, 764])
+torch.Size([83, 508, 764])
+torch.Size([83, 508, 128])
+torch.Size([83, 128, 508])
+torch.Size([83, 128, 1])
+torch.Size([83, 128])
+验证集：
+[0 1 0 0 1 0 0 1 0 0 1 1 0 1 1 1 1 0 1 1 0 1 0 0 0 1 0 0 1 1 0 0 0 1 1 0 1
+ 0 1 0 1 0 0 0 0 0 0 1 0 1 1 0 1 0 1 0 1 0 1 0 0 1 0 1 1 0 0 0 1 0 0 0 0 0
+ 0 0 0 1 0 1 0 0 0 0 0 1 1 1 1 1 0 0 0 0 0 1 1 0 0 0 1 1 0 0 0 0 0 1 1 1 1
+ 0 0 0 0 1 1 0 1 0 1 0 0 0 0 0 0 1 1 1 1 0 0 0 0 1 1 0 0 0 0 1 0 0 1 0 0 1
+ 0 0 1 0 1 0 0 0 0 1 1 1 0 0 0 0 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1
+ 1 0 0 1 0 0 0 0 0 0 0 0 1 1 1 0 0 1 0 1 1 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0
+ 0 0 1 0 1 1 1 0 0 0 0 1 0 1 1 0 1 1 0 0 0 0 1 0 1 1 0 0 0 0 0 0 1 0 0 1 0
+ 0 0 1 0 0 0 0 0 0 1 1 1 0 0 0 1 0 1 1 1 1 0 1 1 0 1 1 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 1 1 1 0 0 1 1 0 0 1 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 1 0 1 1 0 0
+ 0 1 0 1 0 0 1 1 0 1 1 1 1 1 0 1 1 0 1 0 0 0 0 0 0 1 1 0 1 0 1 1 0 0 0 0 0
+ 1 1 0 1 1 0 1 0 1 1 0 0 0 0 0 1 1 1 1 1 0 1 0 0 0 0 0 1 0 0 0 0 1 0 0 1 0
+ 0 0 0 1 0 0 0 0 1 0 0 1 0 1 0 0 0 1 0 1 0 0 1 0 1 0 1 1 1 0 0 0 1 0 0 1 0
+ 0 1 0 1 1 0 1 0 1 0 0 0 0 1 1 0 0 1 0 1 0 1 0 0 1 0 1 1 1 0 1 0 0 0 0 1 0
+ 1 0 0 0 0 0 1 0 1 1 0 0 1 0 0 0 0 0 0 1 0 0 1 1 0 0 0 1 0 1 0 1 0 1 1 0 0
+ 1 0 0 0 0 0 0 0 1 1 0 0 0 1 0 0 1 1 1 0 1 0 0 0 1 0 0 0 1 1 0 0 0 1 0 0 1
+ 1 0 0 0 0 1 0 0 0 1 0 0 1 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0
+ 0 0 1]
+[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0]
+Iter:     14,  Train Loss:  0.43,  Train Acc: 82.81%,  Val Loss:  0.69,  Val Acc: 63.70%,  Time: 0:03:47
+7-------8
+torch.Size([39, 512, 768])
+torch.Size([39, 1, 512, 768])
+torch.Size([39, 1, 508, 764])
+torch.Size([39, 508, 764])
+torch.Size([39, 508, 128])
+torch.Size([39, 128, 508])
+torch.Size([39, 128, 1])
+torch.Size([39, 128])
+训练集：
+tensor([0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0])
+tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+torch.Size([83, 512, 768])
+torch.Size([83, 1, 512, 768])
+torch.Size([83, 1, 508, 764])
+torch.Size([83, 508, 764])
+torch.Size([83, 508, 128])
+torch.Size([83, 128, 508])
+torch.Size([83, 128, 1])
+torch.Size([83, 128])
+验证集：
+[0 1 0 0 1 0 0 1 0 0 1 1 0 1 1 1 1 0 1 1 0 1 0 0 0 1 0 0 1 1 0 0 0 1 1 0 1
+ 0 1 0 1 0 0 0 0 0 0 1 0 1 1 0 1 0 1 0 1 0 1 0 0 1 0 1 1 0 0 0 1 0 0 0 0 0
+ 0 0 0 1 0 1 0 0 0 0 0 1 1 1 1 1 0 0 0 0 0 1 1 0 0 0 1 1 0 0 0 0 0 1 1 1 1
+ 0 0 0 0 1 1 0 1 0 1 0 0 0 0 0 0 1 1 1 1 0 0 0 0 1 1 0 0 0 0 1 0 0 1 0 0 1
+ 0 0 1 0 1 0 0 0 0 1 1 1 0 0 0 0 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1
+ 1 0 0 1 0 0 0 0 0 0 0 0 1 1 1 0 0 1 0 1 1 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0
+ 0 0 1 0 1 1 1 0 0 0 0 1 0 1 1 0 1 1 0 0 0 0 1 0 1 1 0 0 0 0 0 0 1 0 0 1 0
+ 0 0 1 0 0 0 0 0 0 1 1 1 0 0 0 1 0 1 1 1 1 0 1 1 0 1 1 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 1 1 1 0 0 1 1 0 0 1 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 1 0 1 1 0 0
+ 0 1 0 1 0 0 1 1 0 1 1 1 1 1 0 1 1 0 1 0 0 0 0 0 0 1 1 0 1 0 1 1 0 0 0 0 0
+ 1 1 0 1 1 0 1 0 1 1 0 0 0 0 0 1 1 1 1 1 0 1 0 0 0 0 0 1 0 0 0 0 1 0 0 1 0
+ 0 0 0 1 0 0 0 0 1 0 0 1 0 1 0 0 0 1 0 1 0 0 1 0 1 0 1 1 1 0 0 0 1 0 0 1 0
+ 0 1 0 1 1 0 1 0 1 0 0 0 0 1 1 0 0 1 0 1 0 1 0 0 1 0 1 1 1 0 1 0 0 0 0 1 0
+ 1 0 0 0 0 0 1 0 1 1 0 0 1 0 0 0 0 0 0 1 0 0 1 1 0 0 0 1 0 1 0 1 0 1 1 0 0
+ 1 0 0 0 0 0 0 0 1 1 0 0 0 1 0 0 1 1 1 0 1 0 0 0 1 0 0 0 1 1 0 0 0 1 0 0 1
+ 1 0 0 0 0 1 0 0 0 1 0 0 1 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0
+ 0 0 1]
+[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0]
+Iter:     15,  Train Loss:  0.36,  Train Acc: 87.18%,  Val Loss:  0.69,  Val Acc: 63.70%,  Time: 0:04:00
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+torch.Size([128, 512, 768])
+torch.Size([128, 1, 512, 768])
+torch.Size([128, 1, 508, 764])
+torch.Size([128, 508, 764])
+torch.Size([128, 508, 128])
+torch.Size([128, 128, 508])
+torch.Size([128, 128, 1])
+torch.Size([128, 128])
+torch.Size([80, 512, 768])
+torch.Size([80, 1, 512, 768])
+torch.Size([80, 1, 508, 764])
+torch.Size([80, 508, 764])
+torch.Size([80, 508, 128])
+torch.Size([80, 128, 508])
+torch.Size([80, 128, 1])
+torch.Size([80, 128])
+验证集：
+[1 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0
+ 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 1 0 0 0 1 0 0
+ 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0
+ 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 1 0 1 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 1 0
+ 0 0 1 0 0 1 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 1 0
+ 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 1 0 0 0 0 0 1 0 1 0 0 0 0 0 1 0 0
+ 1 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 1 0 1 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 1 0
+ 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 1 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 1 0
+ 0 1 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 1 1 0 1
+ 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 1 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 1 0 1 0 0 1 1 0 0 0 0 0
+ 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 1 0 0 0 0 1 1 0 0 0 0 1 0 0
+ 0 0 1 0 0 1 1 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0
+ 1 0 0 1 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 1 0 0 0 0 0 0 0 1 1
+ 0 0 0 0 1 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 1 0 0 0 1 0 0 0 1 0 0
+ 0 1 0 0 1 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 1 0 0 0 1 0 0 0
+ 0 0 1 0 1 1 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0
+ 0 0 0 0 0 1 0 0 1 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 1 0]
+[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+Test Loss:  0.61,  Test Acc: 82.90%
+Precision, Recall and F1-Score...
+              precision    recall  f1-score   support
+
+       clean     0.8290    1.0000    0.9065       703
+       buggy     0.0000    0.0000    0.0000       145
+
+    accuracy                         0.8290       848
+   macro avg     0.4145    0.5000    0.4533       848
+weighted avg     0.6873    0.8290    0.7515       848
+
+Confusion Matrix...
+[[703   0]
+ [145   0]]
+Time usage: 0:00:17
+C:\Users\Takada Lab\Documents\GitHub\Bert-SDP\venv\lib\site-packages\sklearn\metrics\_classification.py:1344: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+C:\Users\Takada Lab\Documents\GitHub\Bert-SDP\venv\lib\site-packages\sklearn\metrics\_classification.py:1344: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+C:\Users\Takada Lab\Documents\GitHub\Bert-SDP\venv\lib\site-packages\sklearn\metrics\_classification.py:1344: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[W CUDAGuardImpl.h:46] Warning: CUDA warning: driver shutting down (function uncheckedGetDevice)
+[W CUDAGuardImpl.h:62] Warning: CUDA warning: driver shutting down (function uncheckedSetDevice)
+
+Process finished with exit code 0
