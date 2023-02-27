@@ -28,7 +28,7 @@ def pre_process_data(path):
 class Config(object):
     """配置参数"""
 
-    def __init__(self, dataset="PROMISE", project_name="lucene"):
+    def __init__(self, dataset="PROMISE", project_name="poi"):
         self.model_name = 'bert_cnn_bilstm_without_com'
         self.train_path = dataset + '/data/' + project_name + '/train.txt'  # 训练集
         self.dev_path = dataset + '/data/' + project_name + '/dev.txt'  # 验证集
@@ -40,7 +40,7 @@ class Config(object):
         self.require_improvement = 1000  # 若超过1000batch效果还没提升，则提前结束训练
         self.num_classes = 2 # 类别数
         self.num_epochs = 2  # epoch数  todo 随时更改1，2,3,4,5
-        self.batch_size = 128  # mini-batch大小 todo 太大的话可能会导致我的电脑内存泄漏
+        self.batch_size = 64  # mini-batch大小 todo 太大的话可能会导致我的电脑内存泄漏
         self.pad_size = 512  # 每句话处理成的长度(短填长切)
         # 从自己和其他人一般的经验来看，学习率可以设置为3、1、0.5、0.1、0.05、0.01、0.005，0.005、0.0001、0.00001具体需结合实际情况对比判断，小的学习率收敛慢，但能将loss值降到更低。
         self.learning_rate = 0.001  # 学习率 todo 试着调高试
