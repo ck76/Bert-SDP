@@ -7,7 +7,7 @@ import torch.nn.functional as F
 from pytorch_pretrained import BertModel, BertTokenizer
 import pandas as pd
 import numpy as np
-
+import optuna
 
 # from transformers import AutoTokenizer, AutoModelForMaskedLM
 
@@ -28,7 +28,7 @@ def pre_process_data(path):
 class Config(object):
     """配置参数"""
 
-    def __init__(self, dataset="PROMISE", project_name="synapse"):
+    def __init__(self, dataset="PROMISE", project_name="synapse",trail=None):
         self.model_name = 'bert_cnn_bilstm_without_com'
         self.train_path = dataset + '/data/' + project_name + '/train.txt'  # 训练集
         self.dev_path = dataset + '/data/' + project_name + '/dev.txt'  # 验证集
@@ -38,15 +38,15 @@ class Config(object):
         self.save_path = dataset + '/saved_dict/' + self.model_name + '.ckpt'  # 模型训练结果
         self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')  # 设备
         self.require_improvement = 1000  # 若超过1000batch效果还没提升，则提前结束训练
-        self.num_classes = 3 # 类别数
+        self.num_classes = 2 # 类别数
         # todo 超参数
-        self.num_epochs = 2  # epoch数  todo 随时更改1，2,3,4,5
+        self.num_epochs = trail.suggest_categorical('num_epochs', [2,3,4,5])  # epoch数  todo 随时更改1，2,3,4,5
         # todo 超参数
-        self.batch_size = 64  # mini-batch大小 todo 太大的话可能会导致我的电脑内存泄漏
+        self.batch_size = trail.suggest_categorical('num_epochs', [64,128])  # mini-batch大小 todo 太大的话可能会导致我的电脑内存泄漏
         self.pad_size = 512  # 每句话处理成的长度(短填长切)
         # 从自己和其他人一般的经验来看，学习率可以设置为3、1、0.5、0.1、0.05、0.01、0.005，0.005、0.0001、0.00001具体需结合实际情况对比判断，小的学习率收敛慢，但能将loss值降到更低。
         # todo 超参数
-        self.learning_rate = 0.001  # 学习率 todo 试着调高试
+        self.learning_rate = trail.suggest_float('learning_rate', 1e-4, 1e-2,step=0.0001)  # 学习率 todo 试着调高试
         self.bert_path = 'JavaBERT'
         # self.tokenizer =  AutoTokenizer.from_pretrained("CAUKiel/JavaBERT")
         self.tokenizer = BertTokenizer.from_pretrained(self.bert_path)
@@ -65,7 +65,7 @@ class Config(object):
         self.rnn_hidden = 64
         self.num_layers = 2
         self.lstm_input_size=self.hidden_size-self.filter_size+1  #768-5+1
-        self.fc_1=self.pad_size-self.filter_size+1;
+        self.fc_1=self.pad_size-self.filter_size+1
 
 
 class Model(nn.Module):

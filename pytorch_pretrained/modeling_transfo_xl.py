@@ -139,11 +139,11 @@ def load_tf_weights_in_transfo_xl(model, config, tf_path):
     tf_to_pt_map = build_tf_to_pytorch_map(model, config)
 
     # Load weights from TF model
-    init_vars = tf.train.list_variables(tf_path)
+    init_vars = tf.objective.list_variables(tf_path)
     tf_weights = {}
     for name, shape in init_vars:
         print("Loading TF weight {} with shape {}".format(name, shape))
-        array = tf.train.load_variable(tf_path, name)
+        array = tf.objective.load_variable(tf_path, name)
         tf_weights[name] = array
 
     for name, pointer in tf_to_pt_map.items():

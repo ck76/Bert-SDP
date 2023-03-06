@@ -56,12 +56,12 @@ def load_tf_weights_in_gpt2(model, gpt2_checkpoint_path):
     tf_path = os.path.abspath(gpt2_checkpoint_path)
     print("Converting TensorFlow checkpoint from {}".format(tf_path))
     # Load weights from TF model
-    init_vars = tf.train.list_variables(tf_path)
+    init_vars = tf.objective.list_variables(tf_path)
     names = []
     arrays = []
     for name, shape in init_vars:
         print("Loading TF weight {} with shape {}".format(name, shape))
-        array = tf.train.load_variable(tf_path, name)
+        array = tf.objective.load_variable(tf_path, name)
         names.append(name)
         arrays.append(array.squeeze())
 
