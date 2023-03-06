@@ -7,6 +7,8 @@ from sklearn import metrics
 import time
 from utils import get_time_dif
 from pytorch_pretrained.optimization import BertAdam
+import torch.optim as optim
+
 # from torchsummary import summary
 
 # 权重初始化，默认xavier
@@ -27,7 +29,18 @@ from pytorch_pretrained.optimization import BertAdam
 #             else:
 #                 pass
 
-
+"""
+todo 学习率
+todo cnn的层数,
+    num_filters
+    filter_size
+todo bilstm的超参数
+    hidden_size
+    rnn_hidden
+todo epoch num
+todo pad_size
+todo 
+"""
 def train(config, model, train_iter, dev_iter, test_iter):
     # 开始时间
     start_time = time.time()
