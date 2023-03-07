@@ -4,6 +4,7 @@ import torch
 import numpy as np
 from importlib import import_module
 import argparse
+import plotly
 from utils import build_dataset, build_iterator, get_time_dif
 # coding: UTF-8
 import numpy as np
@@ -292,9 +293,14 @@ def evaluate(config, model, data_iter, test=False):
     return acc, loss_total / len(data_iter)
 
 if __name__ == '__main__':
-    study = optuna.create_study()
-    TRIAL_SIZE = 1
+    study = optuna.create_study(study_name='test', direction='maximize')
+    TRIAL_SIZE = 3
     study.optimize(objective, n_trials=TRIAL_SIZE)
     print(study.best_params)
     print(study.best_trial)
     print(study.best_trial.value)
+    importance = optuna.visualization.plot_param_importances(study)
+    plotly.offline.plot(importance)
+
+    graph_cout = optuna.visualization.plot_contour(study, ['num_epochs','learning_rate'])
+    plotly.offline.plot(graph_cout)
