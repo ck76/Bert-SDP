@@ -299,8 +299,8 @@ if __name__ == '__main__':
     print(study.best_params)
     print(study.best_trial)
     print(study.best_trial.value)
-    importance = optuna.visualization.plot_param_importances(study)
-    plotly.offline.plot(importance)
-
-    graph_cout = optuna.visualization.plot_contour(study, ['num_epochs','learning_rate'])
-    plotly.offline.plot(graph_cout)
+    # importance = optuna.visualization.plot_param_importances(study)
+    # plotly.offline.plot(importance)
+    #
+    # graph_cout = optuna.visualization.plot_contour(study, ['num_epochs','learning_rate'])
+    # plotly.offline.plot(graph_cout)
