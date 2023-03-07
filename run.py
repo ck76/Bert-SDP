@@ -224,7 +224,7 @@ def test(config, model, test_iter):
     model.eval()
     start_time = time.time()
     # evaluate  return acc, loss_total / len(data_iter), report, confusion
-    test_acc, test_loss, test_report, test_confusion,report_dict = evaluate(config, model, test_iter, test=True)
+    test_acc, test_loss, test_report, test_confusion,report_dict,error_rate = evaluate(config, model, test_iter, test=True)
     msg = 'Test Loss: {0:>5.2},  Test Acc: {1:>6.2%}'
     print(msg.format(test_loss, test_acc))
     print("Precision, Recall and F1-Score...")
@@ -243,7 +243,17 @@ def test(config, model, test_iter):
 # f1-score  :      1.00
 # support   :     10.00
 # """
-    return float(report_dict["weighted avg"]["f1-score"])
+#     return float(report_dict["weighted avg"]["f1-score"])
+#     todo 还有用loss的，用啥的都有
+    clean_f1_score=report_dict["clean"]["f1-score"]
+    buggy_f1_score=report_dict["buggy"]["f1-score"]
+    weighted_avg_f1_score=report_dict["weighted avg"]["f1-score"]
+
+    if clean_f1_score==0 :
+        weighted_avg_f1_score=0
+    if buggy_f1_score==0 :
+        weighted_avg_f1_score=0
+    return weighted_avg_f1_score
 
 
 
@@ -272,16 +282,18 @@ def evaluate(config, model, data_iter, test=False):
     print(labels_all)
     print(predict_all)
     acc = metrics.accuracy_score(labels_all, predict_all)
+    error_rate =metrics.mean_squared_error(labels_all, predict_all)
+    # return error  # An objective value linked with the Trial object.
     if test:
         report = metrics.classification_report(labels_all, predict_all, target_names=config.class_list, digits=4)
         report_dict = metrics.classification_report(labels_all, predict_all, target_names=config.class_list, digits=4,output_dict=True)
         confusion = metrics.confusion_matrix(labels_all, predict_all)
-        return acc, loss_total / len(data_iter), report, confusion,report_dict
+        return acc, loss_total / len(data_iter), report, confusion,report_dict,error_rate
     return acc, loss_total / len(data_iter)
 
 if __name__ == '__main__':
     study = optuna.create_study()
-    TRIAL_SIZE = 100
+    TRIAL_SIZE = 1
     study.optimize(objective, n_trials=TRIAL_SIZE)
     print(study.best_params)
     print(study.best_trial)

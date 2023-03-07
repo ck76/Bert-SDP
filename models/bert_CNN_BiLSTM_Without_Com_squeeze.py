@@ -40,13 +40,16 @@ class Config(object):
         self.require_improvement = 1000  # 若超过1000batch效果还没提升，则提前结束训练
         self.num_classes = 2 # 类别数
         # todo 超参数
-        self.num_epochs = trail.suggest_categorical('num_epochs', [2,3,4,5])  # epoch数  todo 随时更改1，2,3,4,5
+        # self.num_epochs = trail.suggest_int('num_epochs', 2,5)  # epoch数  todo 随时更改1，2,3,4,5
+        self.num_epochs = 5
         # todo 超参数
-        self.batch_size = trail.suggest_categorical('num_epochs', [64,128])  # mini-batch大小 todo 太大的话可能会导致我的电脑内存泄漏
+        # self.batch_size = trail.suggest_int('num_epochs', 64,128,step=16)  # mini-batch大小 todo 太大的话可能会导致我的电脑内存泄漏
+        self.batch_size = 64
         self.pad_size = 512  # 每句话处理成的长度(短填长切)
         # 从自己和其他人一般的经验来看，学习率可以设置为3、1、0.5、0.1、0.05、0.01、0.005，0.005、0.0001、0.00001具体需结合实际情况对比判断，小的学习率收敛慢，但能将loss值降到更低。
         # todo 超参数
-        self.learning_rate = trail.suggest_float('learning_rate', 1e-4, 1e-2,step=0.0001)  # 学习率 todo 试着调高试
+        # self.learning_rate = trail.suggest_float('learning_rate', 1e-3, 1e-2,step=0.001)  # 学习率 todo 试着调高试
+        self.learning_rate = 0.001   #todo 找出来的0.006没法用啊
         self.bert_path = 'JavaBERT'
         # self.tokenizer =  AutoTokenizer.from_pretrained("CAUKiel/JavaBERT")
         self.tokenizer = BertTokenizer.from_pretrained(self.bert_path)
